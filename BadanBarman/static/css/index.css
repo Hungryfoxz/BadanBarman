@@ -1,0 +1,177 @@
+/* *======================================================= */
+/* ! This Page contains css for the home or index page only */
+/* *======================================================= */
+
+
+
+/* ! ///////////////////////// */
+/* ! Scroll animation Design   */
+/* ! ///////////////////////// */
+
+
+.index_second_section_card, .index_third_section_card, .timeline_content, .index_fourth_section_card{
+    animation: fade linear both;
+    animation-timeline: view();
+    animation-range: entry 30% cover 30%;
+}
+
+@keyframes fade{
+    from{
+        opacity: 0;
+        scale:0.8;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* ! ///////////////// */
+/* ! Timeline Design   */
+/* ! ///////////////// */
+
+/* The actual timeline */
+.timeline_timeline {
+  position: relative;
+  max-width: 80vw;
+  margin: 0 auto;
+
+}
+/* The actual timeline (the vertical ruler) */
+.timeline_timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: rgb(241, 241, 241);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -6px;
+}
+
+/* Removing the border if it is the first card */
+.timeline_timeline:first-child::after {
+  top: 2rem;
+}
+
+/* Removing the border if it is the last card */
+.timeline_timeline:last-child::after {
+  bottom: 6rem;
+}
+  
+
+/* Container around content */
+.timeline_container {
+  margin-top: -3rem;
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.timeline_container:first-child{
+    margin-top: 0;
+}
+
+/* The circles on the timeline */
+.timeline_container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -10px;
+  background-color: rgb(241, 241, 241);
+  border: 4px solid rgb(93, 93, 97);
+  top: 35px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.timeline_left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.timeline_right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.timeline_left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 40px;
+  width: 0;
+  z-index: 1;
+  right: 31px;
+  border: medium solid rgb(224, 224, 224);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent rgb(243, 243, 243);
+}
+
+/* Add arrows to the right container (pointing left) */
+.timeline_right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 40px;
+  width: 0;
+  z-index: 1;
+  left: 31px;
+  border: medium solid rgba(224, 224, 224, 0.8);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgb(243, 243, 243) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.timeline_right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.timeline_content {
+  padding: 20px 30px;
+  position: relative;
+  border-radius: 10px;
+}
+
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 720px) {
+  /* Place the timelime to the left */
+  .timelime_timeline{
+    max-width: 90vw;
+  }
+  
+  .timeline_timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .timeline_container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  margin-top: 0rem;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline_container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .timeline_left::after, .timeline_right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .timeline_right {
+  left: 0%;
+  }
+}

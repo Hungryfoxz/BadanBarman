@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('{% static 'fonts/Poppins-Regular.ttf' %}') format('truetype');
+    font-weight: 400;  /* Specify font weight */
+}
+  
+body {
+    font-family: Poppins, sans-serif;
+    overflow-x: clip !important;
+    max-width: 100%;
+}
+
+html, body{
+    scroll-behavior: smooth !important;
+}
+
+/* * REserved class = tenth,before,after,square,wrapper, */
+
+/* ! ////////////// */
+/* ! Scrollbar CSS */
+/* ! ////////////// */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffe2ff;
+    border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ca85ff;
+    border-radius: 5px;
+    transition: 2s ease background;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: pointer;
+}
+
+
+/* ! ///////////////// */
+/* ! Menu Links Design */
+/* ! ///////////////// */
+.menu-items{
+    .wrapper{
+        margin: 1px 0;
+    }
+    .wrapper a,a:visited,a:hover,a:active{
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        position: relative;
+        transition: 0.5s color ease;
+        text-decoration: none;
+        color: white;
+    }
+    .wrapper a:hover{
+        color: white;
+    }
+    .wrapper a.before:before,a.after:after{
+        content: "";
+        transition: 0.5s all ease;
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+        position: absolute;
+    }
+    .wrapper a.before:before{
+        top: -0.25em;
+    }
+    .wrapper a.after:after{
+        bottom: -0.25em;
+    }
+    .wrapper a.before:before,a.after:after{
+        height: 0.2rem;
+        width: 0;
+        background: white;
+    }
+    .wrapper a.before:hover:before,a.after:hover:after{
+        width: 100%;
+    }
+    .square{
+        box-sizing: border-box;
+        margin-left: -0.4em;
+        position: relative;
+        overflow: hidden;
+    }
+    .square a{
+        position: static;
+        padding: 0.3em 0.6em;
+    }
+    .square:before,.square:after{
+        content: "";
+        box-sizing:border-box;
+        transition:0.25s all ease;
+        -webkit-backface-visibility:hidden;
+                backface-visibility:hidden;
+        position:absolute;
+        width:0.2rem;
+        height:0;
+        background: white;
+    }
+    .square:before{
+        left: 0;
+        bottom: -0.2em;
+    }
+
+    .square:after{
+        right: 0;
+        top: -0.2em;
+    }
+
+    .square a:before{
+        left: 0;
+        transition: 0.25s all ease;
+    }
+    .square a:after{
+        right: 0;
+        transition: 0.25s all ease;
+    }
+
+    .square:hover:before,.square:hover:after{
+        height: calc(100% + 0.4em);
+    }
+}
+
+
+
+

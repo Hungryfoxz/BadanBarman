@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<main class="relative w-screen mb-20 overflow-x-clip">
+
+
+    <section class="w-[85%] lg:w-[80%] pt-20 mx-auto text-slate-700">
+
+
+        <!-- ! ============================  Book Card  ============================= -->
+        <div class="flex flex-col lg:flex-row w-[100%]">
+
+                <div class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-teal-50 via-teal-50 to-teal-100 lg:w-1/3 flex items-center justify-center rounded-t-2xl lg:rounded-r-none lg:rounded-l-2xl">
+                    <img class="h-[20rem] py-4 lg:py-0" src="/{{ details.image }}" alt="title image">
+                </div>
+
+                <div class="lg:w-2/3 p-2 lg:p-10 pt-8 lg:pt-0 justify-items-start rounded-r-2xl lg:bg-slate-200 lg:bg-opacity-30">
+                    <h1 class="mb-3 text-2xl font-semibold lg:mt-4">{{ details.title }}</h1>
+                    <h3><span class="text-pink-600">Author / Editor / Compiler:</span> {{ details.author_editor_compiler|slice:":30" }}...</h3>
+                    <h3><span class="text-pink-600">Publisher:</span> {{ details.publisher }}</h3>
+                    <h3><span class="text-pink-600">Place:</span> {{ details.place }}</h3>
+                    <h3><span class="text-pink-600">Month:</span> {{ details.month }}</h3>
+                    <h3><span class="text-pink-600">Year:</span> {{ details.year }}</h3>
+                    <h3><span class="text-pink-600">Pages:</span> {{ details.pages }}</h3>
+                    <h3><span class="text-pink-600">ISBN/ISSN:</span> {{ details.isbn_issn }}</h3>
+                    {% if details.price != 0 %}
+                        <h3><span class="text-pink-600">Price: </span>Rs {{ details.price }}.00</h3>
+                    {% endif %}
+
+                    <div class="mt-8 lg:mt-6 flex items-center justify-center lg:justify-start">
+
+                        {% if details.is_purchase_possible == True %}
+                            <a href="{{details.link}}">
+                                <button type="button" class="text-white bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700 
+                                    hover:bg-gradient-to-bl shadow-md hover:shadow-lg hover:shadow-pink-500/50 shadow-pink-500/50 font-medium rounded-full me-2 px-5 py-2 text-center
+                                    inline-flex items-center transition-all ease-out duration-200">Buy it
+                                </button>
+                        {% else %}
+                            <a href="{{ details.link }}">
+                                <button type="button" class="text-white bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700 
+                                    hover:bg-gradient-to-bl shadow-md hover:shadow-lg hover:shadow-pink-500/50 shadow-pink-500/50 font-medium rounded-full me-2 px-5 py-2 text-center
+                                    inline-flex items-center transition-all ease-out duration-200">View/Download
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                    </svg>
+                                </button>
+                        {% endif %}
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+
+        
+        <!-- !=========================== ABout the Book Section ======================= -->
+            <div class="mt-8 p-2 mb-2">
+                <h1 class="font-semibold text-2xl mb-2 inline-flex">About the Book
+                    <svg class="h-8 w-7 ml-2" viewBox="0 0 24 24" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.72848 16.1369C3.18295 14.5914 2.41018 13.8186 2.12264 12.816C1.83509 11.8134 2.08083 10.7485 2.57231 8.61875L2.85574 7.39057C3.26922 5.59881 3.47597 4.70292 4.08944 4.08944C4.70292 3.47597 5.59881 3.26922 7.39057 2.85574L8.61875 2.57231C10.7485 2.08083 11.8134 1.83509 12.816 2.12264C13.8186 2.41018 14.5914 3.18295 16.1369 4.72848L17.9665 6.55812C20.6555 9.24711 22 10.5916 22 12.2623C22 13.933 20.6555 15.2775 17.9665 17.9665C15.2775 20.6555 13.933 22 12.2623 22C10.5916 22 9.24711 20.6555 6.55812 17.9665L4.72848 16.1369Z" stroke="currentColor" stroke-width="1.5"></path> <circle cx="8.60724" cy="8.87891" r="2" transform="rotate(-45 8.60724 8.87891)" stroke="currentColor" stroke-width="1.5"></circle> <path d="M11.5417 18.5L18.5208 11.5208" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                </h1>
+                <h3 class="font-semibold">Author / Editor / Compiler : </h3>
+                <p class="pl-4 ">{{ details.author_editor_compiler }}</p>
+                <h3 class="font-semibold">Summary : </h3>
+                <p class="pl-4 first-line:pl-6 first-letter:text-2xl first-letter:font-meduim">
+                    {{ details.about_the_book }} 
+                </p>
+        
+        
+            </div>
+                
+
+
+    </section>
+
+
+</main>
+
+{% endblock %}

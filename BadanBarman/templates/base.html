@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="generator" content="WordPress 5.6">
+        <title>BadanBarman</title>
+        <link rel="icon" type="image/x-icon" href="{% static "./images/main_logo.png" %}">
+
+        <meta name="author" content="BadanBarman">
+        <meta name="description" content="This is the personal portfolio website of Badan Barman">
+        <meta name="keywords" content="html,metadata,rfc">
+        <link rel="stylesheet" href="{% static "css/output.css" %}">
+        <script src="https://unpkg.com/split-type"></script>
+        <script src="{% static "gsap-public/minified/gsap.min.js" %}"></script>
+        <script src="{% static "gsap-public/minified/ScrollTrigger.min.js" %}"></script>
+        <script src="{% static "js/main.js" %}"></script>
+
+        {% if request.resolver_match.url_name == 'index' %}
+        <link rel="stylesheet" href="{% static "css/index.css" %}">
+        <script src="{% static "js/index.js" %}"></script>
+        {% endif %}
+
+        {% if request.resolver_match.url_name == 'websites' %}
+        <link rel="stylesheet" href="{% static "css/websites.css" %}">
+        {% endif %}
+
+        {% if request.resolver_match.url_name == 'ppts' %}
+        <link rel="stylesheet" href="{% static "css/ppts.css" %}">
+        {% endif %}
+
+        {% if request.resolver_match.url_name == 'awards' %}
+        <link rel="stylesheet" href="{% static "css/awards.css" %}">
+        {% endif %}
+
+        {% if request.resolver_match.url_name == 'research_scholars' %}
+        <link rel="stylesheet" href="{% static "css/research_scholar.css" %}">
+        {% endif %}
+
+        {% if request.resolver_match.url_name == 'articles' %}
+        <link rel="stylesheet" href="{% static "css/articles.css" %}">
+        {% endif %}
+
+        {% if request.resolver_match.url_name == 'chapters_in_edited_books' %}
+        <link rel="stylesheet" href="{% static "css/chapters_in_edited_books.css" %}">
+        {% endif %}
+
+        {% if request.resolver_match.url_name == 'invited_lectures' %}
+        <link rel="stylesheet" href="{% static "css/invited_lectures.css" %}">
+        {% endif %}
+
+    </head>
+
+    <body id="main-body" class="relative bg-slate-100 overflow-x-clip lg:text-lg opacity-0 transition-opacity duration-500 ease-out">
+
+        <!-- ! Animation for transitioning the pages while onLoad is True... -->
+        <!-- <div id="page-transition-animation" class="absolute z-[1000] bg-slate-950 bg-opacity-95 top-0 bottom-0 left-0 right-0 transition-all duration-500 ease-out"></div> -->
+
+
+        <!-- ! ########################################################################################################################################################### -->
+        <!-- !*                                                                     NavBar here ::                                                                         -->
+        <!-- ! ########################################################################################################################################################### -->
+ 
+
+        <nav class="fixed top-0 left-0 bg-white w-screen h-12 z-40 flex bg-opacity-70 backdrop-blur-md shadow-sm shadow-slate-300/40">
+            <div class="w-1/3 pl-6 lg:pl-12">
+                <img class="h-12 hover:cursor-pointer" src="{% static "./images/main_logo.png" %}" alt="logo_brand" onclick="window.open('/','_parent')">
+            </div>
+
+            <div class="w-1/3 text-gray-600">
+                <ul class="md:flex items-center justify-between text-lg font-semibold h-12 px-1 hidden">
+                    <a href="/"><li class="cursor-pointer hover:text-purple-500 transition-all duration-150  
+                    before:content-['Home'] before:absolute before:h-1 before:rounded-xl hover:before:bg-purple-500 before:bottom-1 before:text-transparent before:bg-purple-50 hover:before:block
+                    before:transition-all before:duration-150 before:scale-0 hover:before:scale-100">Home</li></a>
+
+                    <a href="/books"><li class="cursor-pointer hover:text-purple-500 transition-all duration-150  
+                    before:content-['Shop'] before:absolute before:h-1 before:rounded-xl hover:before:bg-purple-500 before:bottom-1 before:text-transparent before:bg-purple-50 hover:before:block
+                    before:transition-all before:duration-150 before:scale-0 hover:before:scale-100">Shop</li></a>
+                    
+                    <a href="/#index-contact-section"></href><li class="cursor-pointer hover:text-purple-500 transition-all duration-150  
+                    before:content-['Contact'] before:absolute before:h-1 before:rounded-xl hover:before:bg-purple-500 before:bottom-1 before:text-transparent before:bg-purple-50 hover:before:block
+                    before:transition-all before:duration-150 before:scale-0 hover:before:scale-100">Contact</li></a>
+                </ul>
+            </div>
+
+            <div class="w-1/3 relative z-[100]"">
+                <svg id="toggleMenuInitial" class="h-8 absolute right-6 lg:right-12 top-2 text-gray-600 hover:text-purple-500 cursor-pointer transition-all duration-150" 
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+
+            </div>
+   
+        </nav>
+
+
+        <!-- ! ########################################################################################################################################################### -->
+        <!-- !*                                                                   MENU Show/Hide ::                                                                        -->
+        <!-- ! ########################################################################################################################################################### -->
+    
+  
+        <div id="showMenu" class="fixed bg-gradient-to-tr from-purple-400 via-purple-500 to-purple-600 top-0 left-0 h-screen w-screen z-50 
+         backdrop-blur-xl flex flex-col lg:flex-row -translate-y-full transition-all duration-500 ease-out opacity-0">
+            
+            <svg id="toggleMenuFinal" class="h-9 absolute right-4 top-4 lg:right-12 lg:top-2 text-gray-100 cursor-pointer transition-all duration-150" 
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+
+            <div class="w-screen lg:w-1/2 md:h-screen flex items-center justify-center cursor-default">
+                <h1 class="text-7xl py-10 mt-10 lg:mt-0 lg:text-9xl font-bold text-gray-200 drop-shadow-xl shadow-slate-50">MENU</h1>
+            </div>
+
+            <div class="lg:w-1/2 flex items-end lg:items-center justify-center text-gray-100 text-xl font-semibold">
+                <ul class="menu-items box-border flex flex-col items-end gap-4 sm:gap-5 lg:gap-6 pr-4 border-r-2 lg:pr-8 lg:border-r-4 border-gray-100 rounded-sm text">
+                    <li class="wrapper"><span class="square"><a class="tenth before after" href="/">HOME</a></span></li>
+                    <li class="wrapper"><span class="square"><a class="tenth before after" href="/books">SHOP</a></span></li>
+                    <li class="wrapper"><span class="square"><a class="tenth before after" href="/research_scholars">RESEARCH SCHOLARS</a></span></li>
+                    <li id="menu-publication-hide" class="wrapper"><span class="square"><a class="tenth before after" href="/#index-publication-section">PUBLICATIONS</a></span></li>
+                    <li class="wrapper"><span class="square"><a class="tenth before after" href="/invited_lectures">INVITED LECTURES</a></span></li>
+                    <li class="wrapper"><span class="square"><a class="tenth before after" href="/projects">PROJECTS</a></span></li>
+                    <li class="wrapper"><span class="square"><a class="tenth before after" href="/websites">WEBSITES</a></span></li>
+                    <li class="wrapper"><span class="square"><a class="tenth before after" href="/awards">AWARDS</a></span></li>
+                    <li class="wrapper"><span class="square"><a class="tenth before after" href="/ppts">PPTs</a></span></li>
+                    <li id="menu-contact-hide" class="wrapper"><span class="square"><a class="tenth before after" href="/#index-contact-section">CONTACT</a></span></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <!-- * ********************************************************************************************************************************************************** -->
+        
+        {% block content %}
+            <!-- !  =========================  -->
+            <!-- ?  PAGAES CONTENT COMES HERE  -->
+            <!-- !  =========================  -->
+        {% endblock %}
+        
+        <!-- * ********************************************************************************************************************************************************** -->
+
+
+        <!-- ! ########################################################################################################################################################### -->
+        <!-- !*                                                                     Footer Section  [ The End ]                                                            -->
+        <!-- ! ########################################################################################################################################################### -->
+  
+        {% include "./components/footer.html" %}
+
+        <!-- !++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        <!-- ?                                                                          The END                                                                            -->
+        <!-- !++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    
+
+    
+    </body>
+</html>

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content%}
+
+
+<main class="realtive w-screen">
+ 
+
+    <!-- ?#######################  Book/Shop top Heading section  #######################  -->
+
+    <div class="box-border w-screen text-center pt-12 max-w-[80%] mx-auto pb-16">
+        <div class="box-border flex items-center justify-center pt-12">
+            <svg class="h-20 w-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 20C9.47362 20 7.22075 18.8289 5.75463 17M12 4C14.9611 4 17.5465 5.60879 18.9297 8M4 12C4 9.47362 5.17107 7.22075 7 5.75463M20 12C20 14.8339 18.5265 17.3236 16.3039 18.7448M19.3 5V8H16.3M8 16.3H5V19.3M16.3 16V19H19.3M4.7002 5H7.7002V8" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </div>       
+        <h2 class="text-4xl text-center lg:text-6xl font-bold lg:leading-[.80] tracking-tighter text-slate-800 pt-8">Periodicals</h2>
+        <p class="pt-8 leading-6 tracking-wide lg:max-w-[70%] mx-auto relative">Dr. Badan Barman worked in the editorial body of 2 newsletters / magazines / journals and publisher of 1 magazine.</p>
+    </div>
+
+
+   
+        
+
+    
+
+    <div class="grid grid-col-1 lg:grid-cols-3 gap-10 max-w-[80%] mx-auto mb-20">
+
+
+   
+    <!-- ! ======================= Individual Book Card ==================={{ book.id }} -->
+
+    {% for periodical in periodicals %}
+
+    <section class="p-5 py-10 bg-gradient-to-tr from-teal-100 via-teal-50 to-teal-100 text-center ring-teal-200 ring-2 ring-inset transform duration-500 hover:-translate-y-2 cursor-pointer rounded-xl shadow-lg hover:shadow-xl">
+        <!-- ?@@@@@@@@@@@@@@@@@@@   Image of the Periodical   @@@@@@@@@@@@@@@@@@@ -->
+        <div class="flex justify-center items-center h-80">
+            <img class="h-80 rounded-lg" src="/{{ periodical.image }}" alt="Periodical_image">
+        </div>
+    
+        <!-- ?$$$$$$$$$$$$$$$$$$$   Text Area of the Card     $$$$$$$$$$$$$$$$$$$$ -->
+        <div class="flex-col">
+            <h1 class="text-2xl my-5">{{ periodical.title }}</h1>
+            <p class="mb-5">{{ periodical.month }}, {{ periodical.year}}</p>
+            <a href="/periodical_details/{{periodical.id}}">
+            <button class="py-2.5 px-5 rounded-full bg-slate-900 text-white hover:bg-purple-600 me-2 inline-flex items-center transition-all ease-out duration-200 shadow-md">About
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </button>
+           </a>
+        </div>
+    </section>
+
+
+    {% endfor %}
+
+    </div>
+
+
+
+
+</main>
+
+
+{% endblock %}

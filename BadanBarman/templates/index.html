@@ -1,0 +1,537 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+<!-- ! ########################################################################################################################################################### -->
+<!-- !*                                                                    First section                                                                           -->
+<!-- ! ########################################################################################################################################################### -->
+<main class="realtive flex flex-col min-h-lvh lg:flex-row lg:h-screen w-screen backdrop-blur-xl bg-slate-100 overflow-x-clip">
+
+    <!-- ! Code for the three haze coloured balls in the background... -->
+    <div class="absolute h-60 w-60 bg-purple-500 -z-10 opacity-20 blur-lg rounded-full left-[5%] lg:left-[25%] top-[10%]" id="ball-1"></div>
+    <div class="absolute h-40 w-40 bg-sky-500 -z-10 opacity-20 blur-lg rounded-full right-[5%] lg:left-[50%] top-[30%]" id="ball-2"></div>
+    <div class="absolute h-80 w-80 bg-pink-500 -z-10 opacity-20 blur-lg rounded-full left-[5%] lg:left-[30%] top-[50%]" id="ball-3"></div>
+
+    <!-- ! There are two div in the hero section, the are flex coloum : one contains the text of the hero, other contains the image of the hero... -->
+    
+    <!-- * First Hero Div flex box -->
+
+    <div class="flex flex-col justify-center items-center lg:w-1/2 pt-14">
+        <div class="p-16">
+            <h1 class="text-7xl text-center lg:text-start lg:text-9xl font-bold lg:leading-[.80] tracking-tighter text-slate-800 hero-text" id="hero-text" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">BADAN BARMAN</h1>
+            <div class="below-hero-text pl-2 pt-8 text-gray-600 opacity-0">
+                <p class="tracking-wide text-center lg:text-start"><span class="from-purple-500 via-purple-600 to-purple-700 bg-clip-text bg-gradient-to-br font-bold text-transparent">Professional</span> in Library and Information Science</p>
+                <p class="tracking-wide text-center lg:text-start">Asst. <span class="from-purple-500 via-purple-600 to-purple-700 bg-clip-text bg-gradient-to-br font-bold text-transparent">Professor</span> at Gauhati University-781014</p>      
+            </div>
+
+            <!-- ! There are two buttons in the hero section... -->
+            <div class="below-hero-button flex flex-row justify-center items-center lg:justify-start mt-6 py-4 opacity-0">
+
+                    <a href="#second-section">
+                      <button type="button" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 
+                      hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-purple-300 
+                      shadow-md hover:shadow-lg hover:shadow-purple-500/50 shadow-purple-500/50 font-medium rounded-full me-2 px-5 py-2.5 text-center
+                      inline-flex items-center transition-all ease-out duration-200" ">About me
+                      <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                      </svg>
+                      </button>
+                    </a>
+
+                    <button class="ml-6 relative inline-flex items-center justify-center p-0.5 overflow-hidden font-medium
+                     text-gray-900 rounded-full group bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 group-hover:from-purple-500
+                      group-hover:to-purple-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 shadow-lg hover:shadow-purple-500/50">
+                        <span class="relative inline-flex items-center px-5 py-2.5 transition-all ease-in duration-200 bg-white 
+                        rounded-full group-hover:bg-opacity-0">
+                        Buy now
+                            <svg class="ms-2 w-3.5 h-3.5 text-gray-600 group-hover:text-white transition-all ease-in duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
+                                <path d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"/>
+                            </svg>
+                        </span>
+                    </button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ! Second Hero Div flex box -->
+    <div class="flex items-center justify-center lg:w-1/2 relative">
+        <div class="relative box-border">
+            <img class="h-40 lg:h-80 rounded-2xl z-20 border-4 shadow-2x border-purple-500 shadow-gray-300" 
+            src="{% static './images/bbassethero.png' %}" 
+            alt="Image_Of_Badan_Barman"
+            id="hero-image">
+            <div class="bg-white h-40 w-40 lg:h-80 lg:w-80 absolute top-0 left-0  lg:-top-6 lg:-left-4 flex items-center 
+            justify-center rounded-2xl -z-10 -rotate-12 border-4 border-purple-300 shadow-2xl shadow-purple-300"
+            id="hero-image-div-bg">
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+
+
+
+<!-- ! ########################################################################################################################################################### -->
+<!-- !*                                                                    Second section                                                                          -->
+<!-- ! ########################################################################################################################################################### -->
+<main id="second-section" class="relative bg-gradient-to-tr from-purple-200 via-sky-200 to-pink-200 w-screen flex-col md:pt-2 md:pb-20 lg:px-16 text-slate-700 font-medium overflow-x-clip">
+
+
+    <div class="flex justify-center items-center lg:-my-10">
+        <img id="image-writing-prop" class="h-40 lg:h-80" src="{% static "./images/writing_prop.png" %}" alt="image_writing_hand">
+    </div>
+
+
+
+
+    <div class="flex box-border flex-col lg:flex-row text-center ">
+
+        <div class="index_second_section_card box-border bg-gradient-to-br from-white/80 via-gray-100/65 to-slate-200/50  backdrop-blur-lg flex-1 mx-8 lg:mx-16 p-8 lg:p-12 rounded-3xl shadow-lg shadow-slate-500/60 transform ease-out hover:-translate-y-2 transition-all duration-300">
+            <h1 class="text-2xl font-semibold text-center pb-10 text-slate-700">WORK</h1>
+            <P class="pb-2">Dr. Badan Barman has gained recognition both in India and internationally for his pioneering use of web technologies in the field of Library and Information Science. His notable websites include:
+
+                <span class="text-transparent "><a class="from-fuchsia-600 via-purple-700 to-pink-700 bg-clip-text bg-gradient-to-br text-transparent px-1 hover:text-green-500" href="http://www.lislinks.com">LIS Links</a>.</span>,
+                <span class="text-transparent "><a class="from-fuchsia-600 via-purple-700 to-pink-700 bg-clip-text bg-gradient-to-br text-transparent px-1 hover:text-green-500" href="http://www.netugc.com">Free Online CBSE UGC NET Guide Book</a>.</span>,
+                <span class="text-transparent "><a class="from-fuchsia-600 via-purple-700 to-pink-700 bg-clip-text bg-gradient-to-br text-transparent px-1 hover:text-green-500" href="http://www.lisstudy.com">LIS Study</a>.</span>,
+                <span class="text-transparent "><a class="from-fuchsia-600 via-purple-700 to-pink-700 bg-clip-text bg-gradient-to-br text-transparent px-1 hover:text-green-500" href="http://www.oajse.com">Open Access Journals Search Engine</a>.</span>,
+                <span class="text-transparent "><a class="from-fuchsia-600 via-purple-700 to-pink-700 bg-clip-text bg-gradient-to-br text-transparent px-1 hover:text-green-500" href="http://www.assamarchive.com">Assam Archive</a>.</span>.
+                
+            Dr. Barman's impactful contributions continue to shape the field, bridging technology and information science.</p>
+        </div>
+        
+        
+        <div class="index_second_section_card box-border bg-gradient-to-br from-white/80 via-gray-100/65 to-slate-200/50 bg-opacity-50 backdrop-blur-lg flex-1 mt-16 p-8 lg:mt-0 mx-8 lg:mx-16 lg:p-12 rounded-3xl shadow-lg shadow-slate-500/60 transform ease-out hover:-translate-y-2 transition-all duration-300">
+            <h1 class="text-2xl font-semibold text-center pb-10 text-slate-700">CAREER</h1>
+            <p class="pb-2">Dr. Badan Barman leverages a diverse background in Library and Information Science (LIS) to excel in his current role as 
+                Assistant Professor at Gauhati University's Department of LIS (appointed September 29, 2014). Prior to this appointment, Dr. Barman held positions including Research Assistant 
+                (ICSSR project), Academic Consultant and Assistant Librarian(Krishna Kanta Handiqui State Open University).</p> 
+        </div>
+    </div>
+
+
+
+    <div class="pb-16 lg:pb-0 mt-20 flex items-center justify-center">
+      <a href="/more_about">
+        <button type="button" class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 
+        hover:bg-gradient-to-bl shadow-md hover:shadow-lg hover:shadow-purple-500/50 shadow-purple-500/50 font-medium rounded-full me-2 px-5 py-2.5 text-center
+        inline-flex items-center transition-all ease-out duration-200">More about me
+        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+        </svg>
+        </button>
+      </a>
+    </div>
+
+</main>
+
+
+
+
+
+<!-- ! ########################################################################################################################################################### -->
+<!-- !*                                                                    Third section [ Publlications ]                                                         -->
+<!-- ! ########################################################################################################################################################### -->
+<main class="realtive w-screen backdrop-blur-xl bg-slate-100 py-12 lg:p-12 text-slate-700 lg:pt-4 overflow-x-clip">
+
+
+    <div class="flex justify-center items-center mt-4 md:ml-10">
+        <img id="image-book-prop" class="h-40 lg:h-80" src="{% static "./images/document_prop.png" %}" alt="image_writing_hand">
+    </div>
+
+    <div id="index-publication-section" class="h-0 w-0"></div>
+    <!-- ! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>     CARD section   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   -->
+    <section class="px-2 pt-4 pb-10 lg:pt-0">
+
+        <div class="mx-auto max-w-[85%] lg:max-w-6xl">
+
+          
+          
+          <ul class="mt-16 grid grid-cols-1 gap-8 text-center text-slate-800/95 md:grid-cols-2 lg:grid-cols-3 font-medium">
+
+            <!-- !  ++++++++++++++++++++++++  Card 1  -->
+            <li class="index_third_section_card relative bg-opacity-75 rounded-xl bg-gradient-to-tr from-purple-100 via-purple-200 to-purple-300 px-6 py-8 shadow-lg flex flex-col justify-between hover:-translate-y-0.5 hover:shadow-xl ease-out duration-300 transform">
+      
+              <div class="box-border flex items-center justify-center">
+                <svg class="h-12 w-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 10.4V20M12 10.4C12 8.15979 12 7.03969 11.564 6.18404C11.1805 5.43139 10.5686 4.81947 9.81596 4.43597C8.96031 4 7.84021 4 5.6 4H4.6C4.03995 4 3.75992 4 3.54601 4.10899C3.35785 4.20487 3.20487 4.35785 3.10899 4.54601C3 4.75992 3 5.03995 3 5.6V16.4C3 16.9601 3 17.2401 3.10899 17.454C3.20487 17.6422 3.35785 17.7951 3.54601 17.891C3.75992 18 4.03995 18 4.6 18H7.54668C8.08687 18 8.35696 18 8.61814 18.0466C8.84995 18.0879 9.0761 18.1563 9.29191 18.2506C9.53504 18.3567 9.75977 18.5065 10.2092 18.8062L12 20M12 10.4C12 8.15979 12 7.03969 12.436 6.18404C12.8195 5.43139 13.4314 4.81947 14.184 4.43597C15.0397 4 16.1598 4 18.4 4H19.4C19.9601 4 20.2401 4 20.454 4.10899C20.6422 4.20487 20.7951 4.35785 20.891 4.54601C21 4.75992 21 5.03995 21 5.6V16.4C21 16.9601 21 17.2401 20.891 17.454C20.7951 17.6422 20.6422 17.7951 20.454 17.891C20.2401 18 19.9601 18 19.4 18H16.4533C15.9131 18 15.643 18 15.3819 18.0466C15.15 18.0879 14.9239 18.1563 14.7081 18.2506C14.465 18.3567 14.2402 18.5065 13.7908 18.8062L12 20" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path> 
+                </svg>
+              </div>
+
+                <h3 class="my-3 text-2xl font-semibold">BOOKS</h3>
+
+                <p class="mt-4">
+                  He contributed 18 books to the world of knowledge in the form of author, editor and compiler.
+                </p>
+
+              <div class="absolute top-2 right-2">
+                <a href="/books">
+                  <button type="button" class="text-white group bg-gradient-to-bl from-purple-300 via-purple-400 to-purple-400 
+                  hover:bg-gradient-to-tr shadow-md hover:shadow-lg hover:shadow-slate-50/50 shadow-slate-50/50 rounded-full me-2 px-2.5 py-2.5
+                  inline-flex items-center transition-all ease-out duration-200">
+                  <svg class="-rotate-45 w-3.5 h-3.5 group-hover:rotate-0 transition-all duration-300 ease-out focus:rotate-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+                  </button>
+                </a>
+              </div>
+      
+            </li>
+
+
+
+            <!-- !  ++++++++++++++++++++++++  Card 2  -->
+            <li class="index_third_section_card relative rounded-xl bg-gradient-to-tr from-sky-100 via-sky-200 to-sky-300 px-6 py-8 shadow-lg flex flex-col justify-between hover:-translate-y-0.5 hover:shadow-xl ease-out duration-300 transform">
+      
+              <div class="box-border flex items-center justify-center">
+                <svg class="h-12 w-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 20C9.47362 20 7.22075 18.8289 5.75463 17M12 4C14.9611 4 17.5465 5.60879 18.9297 8M4 12C4 9.47362 5.17107 7.22075 7 5.75463M20 12C20 14.8339 18.5265 17.3236 16.3039 18.7448M19.3 5V8H16.3M8 16.3H5V19.3M16.3 16V19H19.3M4.7002 5H7.7002V8" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+
+                <h3 class="my-3 text-2xl font-semibold">PERIODICALS</h3>
+
+                <p class="mt-4 leading-6 tracking-wider">
+                  He worked in the editorial body of 2 newsletters / magazines / journals and publisher of 1 magazine.
+                </p>
+
+              <div class="absolute top-2 right-2">
+                <a href="/periodicals">
+                  <button type="button" class="text-white group bg-gradient-to-bl from-sky-300 via-sky-400 to-sky-400 
+                  hover:bg-gradient-to-tr shadow-md hover:shadow-lg hover:shadow-slate-50/50 shadow-slate-50/50 rounded-full me-2 px-2.5 py-2.5
+                  inline-flex items-center transition-all ease-out duration-200">
+                  <svg class="-rotate-45 w-3.5 h-3.5 group-hover:rotate-0 transition-all duration-300 ease-out focus:rotate-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+                </button>
+              </a>
+              </div>
+      
+            </li>
+
+
+            <!-- !  +++++++++++++++++++++++++  Card 3  -->
+            <li class="index_third_section_card relative rounded-xl bg-gradient-to-tr from-pink-100 via-pink-200 to-pink-300 px-6 py-8 shadow-lg flex flex-col justify-between hover:-translate-y-0.5 hover:shadow-xl ease-out duration-300 transform">
+      
+              <div class="box-border flex items-center justify-center">
+                <svg class="h-12 w-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.8278 11.2437L12.7074 18.3641C10.7548 20.3167 7.58896 20.3167 5.63634 18.3641C3.68372 16.4114 3.68372 13.2456 5.63634 11.293L12.4717 4.45763C13.7735 3.15589 15.884 3.15589 17.1858 4.45763C18.4875 5.75938 18.4875 7.86993 17.1858 9.17168L10.3614 15.9961C9.71048 16.647 8.6552 16.647 8.00433 15.9961C7.35345 15.3452 7.35345 14.2899 8.00433 13.6391L14.2258 7.41762" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path> 
+              </svg>
+              </div>
+
+                <h3 class="my-3 text-2xl font-semibold">ARTICLES IN JOURNALS</h3>
+
+                <p class="mt-4 leading-6 tracking-wider">
+                  He published 8 articles in newsletters, magazines and journals.
+                </p>
+
+              <div class="absolute top-2 right-2">
+                <a href="/articles">
+                  <button type="button" class="text-white group bg-gradient-to-bl from-pink-300 via-pink-400 to-pink-400 
+                  hover:bg-gradient-to-tr shadow-md hover:shadow-lg hover:shadow-slate-50/50 shadow-slate-50/50 rounded-full me-2 px-2.5 py-2.5
+                  inline-flex items-center transition-all ease-out duration-200">
+                    <svg class="-rotate-45 w-3.5 h-3.5 group-hover:rotate-0 transition-all duration-300 ease-out focus:rotate-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                  </button>
+                </a>
+              </div>
+      
+            </li>
+
+
+
+            <!-- !  +++++++++++++++++++++++++  Card 4  -->
+            <li class="index_third_section_card relative rounded-xl bg-gradient-to-tr from-sky-100 via-sky-200 to-sky-300 px-6 py-8 shadow-lg flex flex-col justify-between hover:-translate-y-0.5 hover:shadow-xl ease-out duration-300 transform">
+      
+              <div class="box-border flex items-center justify-center">
+                <svg class="h-12 w-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.2 21C6.07989 21 5.51984 21 5.09202 20.782C4.71569 20.5903 4.40973 20.2843 4.21799 19.908C4 19.4802 4 18.9201 4 17.8V6.2C4 5.07989 4 4.51984 4.21799 4.09202C4.40973 3.71569 4.71569 3.40973 5.09202 3.21799C5.51984 3 6.0799 3 7.2 3H16.8C17.9201 3 18.4802 3 18.908 3.21799C19.2843 3.40973 19.5903 3.71569 19.782 4.09202C20 4.51984 20 5.0799 20 6.2V7M8 7H14M8 15H9M8 11H12M11.1954 20.8945L12.5102 20.6347C13.2197 20.4945 13.5744 20.4244 13.9052 20.2952C14.1988 20.1806 14.4778 20.0317 14.7365 19.8516C15.0279 19.6486 15.2836 19.393 15.7949 18.8816L20.9434 13.7332C21.6306 13.0459 21.6306 11.9316 20.9434 11.2444C20.2561 10.5571 19.1418 10.5571 18.4546 11.2444L13.2182 16.4808C12.739 16.96 12.4994 17.1996 12.3059 17.4712C12.1341 17.7123 11.9896 17.9717 11.8751 18.2447C11.7461 18.5522 11.6686 18.882 11.5135 19.5417L11.1954 20.8945Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path> 
+                </svg>
+              </div>
+
+                <h3 class="my-3 text-2xl font-semibold">CONFERENCE PAPERS</h3>
+
+                <p class="mt-4 leading-6 tracking-wider">
+                  He presented and published 16 papers in different state, national and international level seminars and conferences.
+                </p>
+
+
+              <div class="absolute top-2 right-2">
+                <a href="/conference_papers">
+                  <button type="button" class="text-white group bg-gradient-to-bl from-sky-300 via-sky-400 to-sky-400 
+                  hover:bg-gradient-to-tr shadow-md hover:shadow-lg hover:shadow-slate-50/50 shadow-slate-50/50 rounded-full me-2 px-2.5 py-2.5
+                  inline-flex items-center transition-all ease-out duration-200">
+                    <svg class="-rotate-45 w-3.5 h-3.5 group-hover:rotate-0 transition-all duration-300 ease-out focus:rotate-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                  </button>
+                </a>
+              </div>
+      
+            </li>
+
+
+
+            <!-- !  +++++++++++++++++++++  Card 5  -->
+            <li class="index_third_section_card relative rounded-xl bg-gradient-to-tr from-pink-100 via-pink-200 to-pink-300 px-6 py-8 shadow-lg flex flex-col justify-between hover:-translate-y-0.5 hover:shadow-xl ease-out duration-300 transform">
+      
+              <div class="box-border flex items-center justify-center">
+                <svg class="h-12 w-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.00002 7L8.73728 5.26274C9.52931 4.47071 9.92533 4.07469 10.382 3.92632C10.7837 3.7958 11.2164 3.7958 11.6181 3.92632C12.0747 4.07469 12.4707 4.47071 13.2628 5.26274L14 6.00012M10 10L14 14M9.50005 18.5002C10.1581 17.8422 16.644 11.3563 20.004 7.99627C21.1086 6.89166 21.1046 5.10475 20.0001 4.0001C18.8954 2.89541 17.1084 2.89137 16.0038 3.99603C12.6437 7.35611 6.15797 13.8419 5.49993 14.4999C3.71534 16.2843 2.64644 20.6464 2.99993 20.9999C3.35341 21.3533 7.66067 20.3396 9.50005 18.5002Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path> 
+              </svg>
+              </div>
+
+                <h3 class="my-3 text-2xl font-semibold">CHAPTERS IN EDITED BOOKS</h3>
+
+
+                <p class="mt-4 leading-6 tracking-wider">
+                  He has published 6 chapters in edited books.
+                </p>
+
+
+
+              <div class="absolute top-2 right-2">
+                <a href="/chapters_in_edited_books">
+                  <button type="button" class="text-white group bg-gradient-to-bl from-pink-300 via-pink-400 to-pink-400 
+                  hover:bg-gradient-to-tr shadow-md hover:shadow-lg hover:shadow-slate-50/50 shadow-slate-50/50 rounded-full me-2 px-2.5 py-2.5
+                  inline-flex items-center transition-all ease-out duration-200">
+                  <svg class="-rotate-45 w-3.5 h-3.5 group-hover:rotate-0 transition-all duration-300 ease-out focus:rotate-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+                  </button>
+                </a>
+              </div>
+      
+            </li>
+
+
+
+            <!-- !  ++++++++++++++++++++++  Card 6  -->
+            <li class="index_third_section_card relative rounded-xl bg-gradient-to-tr from-purple-100 via-purple-200 to-purple-300 px-6 py-8 shadow-lg flex flex-col justify-between 
+            hover:-translate-y-0.5 hover:shadow-xl ease-out duration-300 transform">
+      
+              <div class="box-border flex items-center justify-center">
+                <svg class="h-12 w-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
+                  <path d="M3 8.2C3 7.07989 3 6.51984 3.21799 6.09202C3.40973 5.71569 3.71569 5.40973 4.09202 5.21799C4.51984 5 5.0799 5 6.2 5H17.8C18.9201 5 19.4802 5 19.908 5.21799C20.2843 5.40973 20.5903 5.71569 20.782 6.09202C21 6.51984 21 7.07989 21 8.2V15.8C21 16.9201 21 17.4802 20.782 17.908C20.5903 18.2843 20.2843 18.5903 19.908 18.782C19.4802 19 18.9201 19 17.8 19H6.2C5.07989 19 4.51984 19 4.09202 18.782C3.71569 18.5903 3.40973 18.2843 3.21799 17.908C3 17.4802 3 16.9201 3 15.8V8.2Z" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path> 
+                  <path d="M10 9L7 12L10 15M14 9L17 12L14 15" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"></path> 
+                </svg>
+              </div>
+
+                <h3 class="my-3 text-2xl font-semibold">WEBSITES</h3>
+
+
+                <p class="mt-4 leading-6 tracking-wider">
+                  Dr. Badan Barman designed and developed a total of 12 websites till now.
+                </p>
+
+
+              <div class="absolute top-2 right-2">
+                <button type="button" class="text-white bg-gradient-to-bl from-purple-300 via-purple-400 to-purple-400 
+                hover:bg-gradient-to-tr shadow-md hover:shadow-lg hover:shadow-slate-50/50 shadow-slate-50/50 rounded-full me-2 px-2.5 py-2.5
+                inline-flex items-center transition-all ease-out duration-200 group"><a href="/websites">
+                <svg class="-rotate-45 w-3.5 h-3.5 group-hover:rotate-0 transition-all duration-300 ease-out focus:rotate-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg></a>
+                </button>
+              </div>
+      
+            </li>
+
+
+
+
+          </ul>
+
+        </div>
+      
+    </section>
+
+    
+</main>
+
+
+
+
+
+<!-- ! ########################################################################################################################################################### -->
+<!-- !*                                                                     Fourth Section [ Timeline ]                                                            -->
+<!-- ! ########################################################################################################################################################### -->
+
+<main class="relative bg-gradient-to-tr from-purple-200 via-sky-200 to-pink-200 min-h-lvh w-screen overflow-x-clip">
+    
+  <div class="box-border w-full py-16">
+
+      <div class="flex justify-center items-center mt-4">
+        <img id="image-prize-prop" class="h-40 lg:h-80" src="{% static "./images/prize_prop.png" %}" alt="image_prize_prop">
+      </div>
+
+      <div class="py-12 mb-12 px-10 lg:px-0">
+        <h1 class="text-center text-2xl font-semibold uppercase text-slate-700">Remunerated Positions Held</h1>
+      </div>
+
+
+      <div class="timeline_timeline text-gray-700">
+
+        <div class="timeline_container timeline_left">
+          <div class="timeline_content bg-gradient-to-b from-white/90 to-slate-100/70">
+            <h2 class="text-lg font-semibold uppercase pb-2 text-slate-600">February 1, 2006 - February 28, 2006</h2>
+            <p>Apprenticeship on Lib. & Inf. Science, Central Reference Library, Kolkata, Alipore, Kolkata-700027, West Bengal, Assam</p>
+          </div>
+        </div>
+
+        <div class="timeline_container timeline_right">
+          <div class="timeline_content bg-gradient-to-b from-white/90 to-slate-100/70">
+            <h2 class="text-lg font-semibold uppercase text-slate-600 pb-2">March 1, 2006- June 15, 2007</h2>
+            <p>Research Assistant, Department of Library and Information Science, Gauhati University, Guwahati-781014, Assam, India.</p>
+          </div>
+        </div>
+
+        
+        <div class="timeline_container timeline_left">
+          <div class="timeline_content bg-gradient-to-b from-white/90 to-slate-100/70">
+            <h2 class="text-lg font-semibold uppercase text-slate-600 pb-2">June 16, 2007- September 30, 2007</h2>
+            <p>Webpage and Database Developer, Media Trust, Assam, Jonakpur, Birubari, Guwahati-781007, Assam, India.</p>
+          </div>
+        </div>
+
+        <div class="timeline_container timeline_right">
+          <div class="timeline_content bg-gradient-to-b from-white/90 to-slate-100/70">
+            <h2 class="text-lg font-semibold uppercase text-slate-600 pb-2">October 1, 2007- June 11, 2008</h2>
+            <p>Centrally Administered Doctoral Fellow of ICSSR, Department of Library and Information Science, Gauhati University, Guwahati-781014, Assam, India.</p>
+          </div>
+        </div>
+
+        <div class="timeline_container timeline_left">
+          <div class="timeline_content bg-gradient-to-b from-white/90 to-slate-100/70">
+            <h2 class="text-lg font-semibold uppercase text-slate-600 pb-2">June 12, 2008 - April 3, 2013</h2>
+            <p>Academic Consultant & Library i/c, Krishna Kanta Handiqui State Open University (KKHSOU), Khanapara, Guwahati-781022, Assam, India.</p>
+          </div>
+        </div>
+
+        <div class="timeline_container timeline_right">
+          <div class="timeline_content bg-gradient-to-b from-white/90 to-slate-100/70">
+            <h2 class="text-lg font-semibold uppercase text-slate-600 pb-2">April 4, 2013 - September 28, 2014</h2>
+            <p>Assistant Librarian, Krishna Kanta Handiqui State Open University (KKHSOU), Khanapara, Guwahati-781022, Assam, India</p>
+          </div>
+        </div>
+
+        <div class="timeline_container timeline_left">
+          <div class="timeline_content bg-gradient-to-b from-white/90 to-slate-100/70">
+            <h2 class="text-lg font-semibold uppercase text-slate-600 pb-2">September 29, 2014 - Till Date</h2>
+            <p>Assistant Professor, Department of Library and Information Science, Gauhati University, Guwahati-781014, Assam, India.</p>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+      </div>
+    </div>
+
+</main>
+
+
+<!-- ! ########################################################################################################################################################### -->
+<!-- !*                                                                     Fifth Section  [ Contact ]                                                             -->
+<!-- ! ########################################################################################################################################################### -->
+<main class="realtive w-screen backdrop-blur-xl bg-slate-100 p-8 lg:p-12 text-slate-700 lg:pt-4 overflow-x-clip">
+
+    
+    <!-- ! ++++++++++++++ Robot_chat Image Here  ++++++++++++++++ -->
+    <div class="flex justify-center items-center">
+      <img id="chat-bot-prop" class="h-28 lg:h-64" src="{% static "./images/chat_bot_prop.png" %}" alt="image_prize_prop">
+    </div>
+
+      <!-- * ++++++++++++++++ Header Main ++++++++++++++++++ -->
+    <div class="py-12 box-border" id="index-contact-section">
+      <h1 class="text-2xl font-semibold uppercase text-center drop-shadow-md">CONTACT</h1>
+    </div>
+
+    <section class="index_fourth_section_card lg:w-[90%] mx-auto flex flex-col lg:flex-row bg-gradient-to-r from-sky-200 via-purple-200 to-pink-200 lg:from-sky-300 lg:via-purple-300 lg:to-pink-300 rounded-lg p-8 lg:p-16">
+      
+      <!-- ! +++++++++++++++++++++++++   First Div +++++++++++++++++++++++++++++  -->
+      <div class="flex flex-col w-full lg:w-1/2 border-b-0 lg:border-b-0 lg:border-r-2 border-slate-500 lg:border-slate-700 mb-8 lg-mb-0">
+        <div class="">
+          <h1 class="text-lg font-semibold uppercase text-center mb-4">Want to connect ...?</h1>
+        </div>
+
+        <!-- * +========= QRSCANNER ===========+ -->
+        <div class="flex flex-col items-center justify-center py-3">
+          <p class="pb-4 text-center">Scan the QR code to download the Contact Details</p>
+          <img class="h-40 w-40" src="{% static './images/qrScanner.png' %}" alt="QR Scanner">
+        </div>
+
+        <ul class="flex flex-row justify-between lg:justify-around items-center mt-10 lg:px-10 mb-8 lg:mb-0">
+          <a href="facebook.com/badanbarman">
+            <li class="h-8 w-8 lg:w-12 lg:h-12 cursor-pointer hover:-translate-y-1 duration-300 ease-out">
+              <svg fill="currentColor" viewBox="0 0 24 24" > <path d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z"></path></svg>
+            </li>
+          </a>
+          <a href="youtube.com/c/BadanBarman/videos">
+            <li class="h-8 w-8 lg:w-14 lg:h-14 cursor-pointer hover:-translate-y-1 duration-300 ease-out">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.67 8.14002C19.5811 7.7973 19.4028 7.48433 19.1533 7.23309C18.9038 6.98185 18.5921 6.80134 18.25 6.71001C16.176 6.4654 14.0883 6.35517 12 6.38001C9.91174 6.35517 7.82405 6.4654 5.75001 6.71001C5.40793 6.80134 5.09622 6.98185 4.84674 7.23309C4.59725 7.48433 4.41894 7.7973 4.33001 8.14002C4.10282 9.41396 3.99236 10.706 4.00001 12C3.99198 13.3007 4.10244 14.5994 4.33001 15.88C4.42355 16.2172 4.60391 16.5239 4.85309 16.7696C5.10226 17.0153 5.41153 17.1913 5.75001 17.28C7.82405 17.5246 9.91174 17.6349 12 17.61C14.0883 17.6349 16.176 17.5246 18.25 17.28C18.5885 17.1913 18.8978 17.0153 19.1469 16.7696C19.3961 16.5239 19.5765 16.2172 19.67 15.88C19.8976 14.5994 20.008 13.3007 20 12C20.0077 10.706 19.8972 9.41396 19.67 8.14002ZM10.36 14.39V9.63001L14.55 12L10.36 14.38V14.39Z" fill="currentColor"></path></svg>
+            </li>
+          </a>
+          <a href="scholar.google.com/citations?user=zUufiz8AAAAJ&hl=en">
+            <li class="h-8 w-8 lg:w-12 lg:h-12 cursor-pointer hover:-translate-y-1 duration-300 ease-out">
+              <svg fill="currentColor" viewBox="0 0 32 32" ><path d="M14.573 2.729c-0.729 0.484-4.292 2.849-7.917 5.255s-6.589 4.396-6.589 4.422c0 0.026 0.182 0.146 0.406 0.266 0.224 0.13 3.797 2.109 7.953 4.411l7.542 4.193 0.193-0.099c0.109-0.052 2.891-1.641 6.188-3.521l5.99-3.427 0.036 10.599h3.557v-12.401l-4.615-3.094c-6.219-4.167-11.188-7.448-11.307-7.474-0.063-0.010-0.703 0.38-1.438 0.87zM7.141 22.177l0.016 2.672 8.828 5.292 8.891-5.339v-2.641c0-1.458-0.016-2.646-0.031-2.646-0.021 0-1.76 1.042-3.87 2.323l-4.406 2.661-0.578 0.339-1.755-1.052c-1.464-0.875-2.927-1.755-4.385-2.641l-2.672-1.615c-0.031-0.010-0.042 1.177-0.036 2.646z"></path></svg>
+            </li>
+          </a>
+          <a href="twitter.com/badanbarman">
+            <li class="h-7 w-7 lg:w-10 lg:h-10 cursor-pointer hover:-translate-y-1 duration-300 ease-out">
+              <svg fill="currentColor" viewBox="0 0 1920 1920" ><path d="M1920 311.856c-70.701 33.769-146.598 56.47-226.221 66.86 81.317-52.517 143.774-135.529 173.252-234.691-76.236 48.678-160.716 84.028-250.391 103.002-71.718-82.56-174.268-134.06-287.435-134.06-217.75 0-394.165 189.966-394.165 424.206 0 33.318 3.614 65.619 10.165 96.678C617.9 616.119 327.304 447.385 133.045 190.67c-33.77 62.57-53.309 135.53-53.309 213.233 0 147.162 91.031 276.818 196.744 353.054-64.602-2.26-157.101-21.46-157.101-53.309v5.648c0 205.327 114.41 376.658 294.55 415.849-32.978 9.487-78.38 14.795-114.409 14.795-25.412 0-55.454-2.71-79.624-7.793 50.26 168.509 193.13 291.163 365.478 294.777-134.852 113.506-306.07 181.383-490.616 181.383-31.85 0-64.038-2.033-94.758-5.873 174.494 120.17 381.176 190.532 603.67 190.532 724.97 0 1121.055-646.136 1121.055-1206.55 0-18.41-.452-36.932-1.356-55.116 77.026-59.746 143.887-134.4 196.631-219.444" fill-rule="evenodd"></path></svg>
+            </li>
+          </a>
+          <a href="feeds/feedburner.com/bbarman">
+            <li class="h-8 w-8 lg:w-10 lg:h-10 cursor-pointer hover:-translate-y-1 duration-300 ease-out">
+              <svg fill="currentColor" version="1.1" viewBox="0 0 512 512" xml:space="preserve"><path style="display: inline; fill-rule: evenodd; clip-rule: evenodd;" d="M316.865,147.088 c15.918,83.687-35.531,135.335-99.406,117.271c93.392-153-42.517-153.387-0.967-263.858 C152.611,45.936,88.537,173.112,88.73,265.905c0.2,129.896,68.147,211.836,159.407,212.809 c88.726,0.773,174.746-83.686,175.132-166.973C423.656,216.203,371.807,178.926,316.865,147.088z M248.137,445.903 c-90.479,1.747-165.227-94.951-80.96-232.794c-17.672,79.793,29.704,139.202,75.328,139.776 c51.455,0.398,81.933-47.757,96.491-110.858C421.51,305.129,384.232,443.184,248.137,445.903z M492.871,410.348 c0,55.716-106.393,101.152-236.868,101.152c-130.477,0-236.874-45.437-236.874-101.152c0-26.248,23.603-50.201,62.203-68.216 c7.848,34.532,21.433,64.823,40.434,89.449c31.089,40.297,75.264,62.777,124.406,63.302h1.334 c84.378,0,167.642-71.76,184.333-152.202C469.74,360.62,492.871,384.374,492.871,410.348z"> </path></svg>
+            </li>
+          </a>
+        </ul>
+      </div>
+
+      <!-- ! +++++++++++++++++++++++++++++   Second Div ++++++++++++++++++++++++++   -->
+      <div class="box-border w-full lg:w-1/2 px-4 lg:px-8 flex justify-center">
+        <ul class="flex flex-col gap-3 lg:gap-2 items-center lg:items-start">
+          <li class="flex items-start">
+            <svg class="h-4 w-4lg:h-6 lg:w-6 mr-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.05 14.95L9.2 16.8C8.81 17.19 8.19 17.19 7.79 16.81C7.68 16.7 7.57 16.6 7.46 16.49C6.43 15.45 5.5 14.36 4.67 13.22C3.85 12.08 3.19 10.94 2.71 9.81C2.24 8.67 2 7.58 2 6.54C2 5.86 2.12 5.21 2.36 4.61C2.6 4 2.98 3.44 3.51 2.94C4.15 2.31 4.85 2 5.59 2C5.87 2 6.15 2.06 6.4 2.18C6.66 2.3 6.89 2.48 7.07 2.74L9.39 6.01C9.57 6.26 9.7 6.49 9.79 6.71C9.88 6.92 9.93 7.13 9.93 7.32C9.93 7.56 9.86 7.8 9.72 8.03C9.59 8.26 9.4 8.5 9.16 8.74L8.4 9.53C8.29 9.64 8.24 9.77 8.24 9.93C8.24 10.01 8.25 10.08 8.27 10.16C8.3 10.24 8.33 10.3 8.35 10.36C8.53 10.69 8.84 11.12 9.28 11.64C9.73 12.16 10.21 12.69 10.73 13.22C10.83 13.32 10.94 13.42 11.04 13.52C11.44 13.91 11.45 14.55 11.05 14.95Z" fill="currentColor"></path> 
+              <path d="M21.9696 18.3291C21.9696 18.6091 21.9196 18.8991 21.8196 19.1791C21.7896 19.2591 21.7596 19.3391 21.7196 19.4191C21.5496 19.7791 21.3296 20.1191 21.0396 20.4391C20.5496 20.9791 20.0096 21.3691 19.3996 21.6191C19.3896 21.6191 19.3796 21.6291 19.3696 21.6291C18.7796 21.8691 18.1396 21.9991 17.4496 21.9991C16.4296 21.9991 15.3396 21.7591 14.1896 21.2691C13.0396 20.7791 11.8896 20.1191 10.7496 19.2891C10.3596 18.9991 9.96961 18.7091 9.59961 18.3991L12.8696 15.1291C13.1496 15.3391 13.3996 15.4991 13.6096 15.6091C13.6596 15.6291 13.7196 15.6591 13.7896 15.6891C13.8696 15.7191 13.9496 15.7291 14.0396 15.7291C14.2096 15.7291 14.3396 15.6691 14.4496 15.5591L15.2096 14.8091C15.4596 14.5591 15.6996 14.3691 15.9296 14.2491C16.1596 14.1091 16.3896 14.0391 16.6396 14.0391C16.8296 14.0391 17.0296 14.0791 17.2496 14.1691C17.4696 14.2591 17.6996 14.3891 17.9496 14.5591L21.2596 16.9091C21.5196 17.0891 21.6996 17.2991 21.8096 17.5491C21.9096 17.7991 21.9696 18.0491 21.9696 18.3291Z" fill="currentColor"></path></svg>
+            +919864205166
+          </li>
+          <li class="flex items-start">
+            <svg class="h-4 w-4lg:h-6 lg:w-5 mr-5" fill="currentColor" viewBox="0 0 32 32" version="1.1"><path d="M30.996 7.824v17.381c0 0 0 0 0 0.001 0 1.129-0.915 2.044-2.044 2.044-0 0-0 0-0.001 0h-4.772v-11.587l-8.179 6.136-8.179-6.136v11.588h-4.772c0 0 0 0-0 0-1.129 0-2.044-0.915-2.044-2.044 0-0 0-0.001 0-0.001v0-17.381c0-0 0-0.001 0-0.001 0-1.694 1.373-3.067 3.067-3.067 0.694 0 1.334 0.231 1.848 0.619l-0.008-0.006 10.088 7.567 10.088-7.567c0.506-0.383 1.146-0.613 1.84-0.613 1.694 0 3.067 1.373 3.067 3.067v0z"></path></svg>
+            badanbarman@gmail.com
+          </li>
+          <li class="flex items-start">
+            <svg class="h-4 w-4lg:h-6 lg:w-6 mr-4" viewBox="0 0 16 16" fill="currentColor"><path fill="currentColor" d="M9.81175,1.23848 C10.3070964,1.37121929 10.6154651,1.85349541 10.5425767,2.3488407 L10.5189,2.46323 L7.41303,14.0543 C7.27009,14.5878 6.72175,14.9044 6.18828,14.7614 C5.69292429,14.6287071 5.38457224,14.1464602 5.45749504,13.6510948 L5.48118,13.5367 L8.58701,1.94559 C8.72995,1.41213 9.27829,1.09554 9.81175,1.23848 Z M4.70711,4.29288 C5.09763,4.68341 5.09763,5.31657 4.70711,5.7071 L2.41421,7.99999 L4.70711,10.2929 C5.09763,10.6834 5.09763,11.3166 4.70711,11.7071 C4.31658,12.0976 3.68342,12.0976 3.29289,11.7071 L0.292893,8.7071 C-0.0976311,8.31657 -0.0976311,7.68341 0.292893,7.29288 L3.29289,4.29288 C3.68342,3.90236 4.31658,3.90236 4.70711,4.29288 Z M11.2929,4.29288 C11.6533615,3.9324 12.2206207,3.90467077 12.6128973,4.20969231 L12.7071,4.29288 L15.7071,7.29288 C16.0675615,7.65336923 16.0952893,8.22059645 15.7902834,8.61289152 L15.7071,8.7071 L12.7071,11.7071 C12.3166,12.0976 11.6834,12.0976 11.2929,11.7071 C10.9324385,11.3466385 10.9047107,10.7793793 11.2097166,10.3871027 L11.2929,10.2929 L13.5858,7.99999 L11.2929,5.7071 C10.9024,5.31657 10.9024,4.68341 11.2929,4.29288 Z"></path></svg>
+            http://www.badanbarman.in</li>
+          <ul class="lg:ml-10 flex flex-col gap-2 items-center lg:items-start">
+            <div class="flex -ml-10">
+              <svg class="h-4 w-4lg:h-6 lg:w-6 mr-4" version="1.0" id="Layer_1" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="currentColor"><path fill="currentColor" d="M32,0C18.746,0,8,10.746,8,24c0,5.219,1.711,10.008,4.555,13.93c0.051,0.094,0.059,0.199,0.117,0.289l16,24 C29.414,63.332,30.664,64,32,64s2.586-0.668,3.328-1.781l16-24c0.059-0.09,0.066-0.195,0.117-0.289C54.289,34.008,56,29.219,56,24 C56,10.746,45.254,0,32,0z M32,32c-4.418,0-8-3.582-8-8s3.582-8,8-8s8,3.582,8,8S36.418,32,32,32z"></path></svg>
+              <h5>Address</h5>
+            </div>
+            <li class="text-center lg:text-start mt-1 lg:mt-0"><span class="bg-gradient-to-tr from-cyan-200 via-sky-100 to-sky-200 rounded-md py-1 px-2">Work Address</span> Dr. Badan Barman, Assistant Professor, Department of Library and Information Science, Ground Floor, Main Arts Building, Gauhati University, Guwahati-781014, Assam, India.</li>
+            <li class="text-center lg:text-start mt-1 lg:mt-0"><span class="bg-gradient-to-tr from-cyan-200 via-sky-100 to-sky-200 rounded-md py-1 px-2">Residential Address</span> Dr. Badan Barman, G2, 1st Home in the Left Side, Green Valley Public School Road, Khanamukh, Guwahati-781014, Assam, India.</li>
+            <li class="text-center lg:text-start mt-1 lg:mt-0"><span class="bg-gradient-to-tr from-cyan-200 via-sky-100 to-sky-200 rounded-md py-1 px-2">Permanent Address</span> Dr. Badan Barman, House No. 8, Taranga Path, Krishnanagar, P.O.: Japorigog, Guwahati-781005, Assam, India.</li>
+
+          </ul>
+        </ul>
+
+      </div>
+
+      
+    </section>
+    
+  </main>
+  
+
+{% endblock %}
+

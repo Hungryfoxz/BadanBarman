@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<main class="relative w-screen mb-20 overflow-x-clip">
+
+
+    <section class="w-[85%] lg:w-[80%] pt-20 mx-auto text-slate-700">
+
+
+        <!-- ! ============================  Book Card  ============================= -->
+
+            <div class="flex flex-col lg:flex-row w-[100%]">
+                <div class="hidden">
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-rose-100 via-rose-100 to-rose-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-pink-100 via-pink-100 to-pink-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-fuchsia-100 via-fuchsia-100 to-fuchsia-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-violet-100 via-violet-100 to-violet-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-100 via-indigo-100 to-indigo-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-100 via-blue-100 to-blue-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-cyan-100 via-cyan-100 to-cyan-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-teal-100 via-teal-100 to-teal-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-100 via-emerald-100 to-emerald-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-green-100 via-green-100 to-green-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-lime-100 via-lime-100 to-lime-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-100 via-yellow-100 to-yellow-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-orange-100 via-orange-100 to-orange-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-stone-100 via-stone-100 to-stone-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-red-100 via-red-100 to-red-300"></span>
+                    <span class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-100 via-gray-100 to-gray-300"></span>
+                </div>
+
+                <div class="bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-{{details.book_cover_color}}-100 via-{{details.book_cover_color}}-100 to-{{details.book_cover_color}}-300 lg:w-1/3 flex items-center justify-center rounded-t-2xl lg:rounded-r-none lg:rounded-l-2xl">
+                    <img class="h-[20rem] py-4 lg:py-0" src="/{{ details.image }}" alt="title image">
+                </div>
+
+                <div class="lg:w-2/3 p-2 lg:p-10 pt-8 lg:pt-0 justify-items-start rounded-r-2xl lg:bg-slate-200 lg:bg-opacity-30">
+                    <h1 class="mb-3 text-2xl font-semibold lg:mt-4">{{ details.title }}</h1>
+                    <h3><span class="text-pink-600">Sub-Title:</span> {{ details.sub_title|slice:":30" }}...</h3>
+                    <h3><span class="text-pink-600">Author / Editor / Compiler:</span> {{ details.author_editor_compiler }}</h3>
+                    <h3><span class="text-pink-600">Publisher:</span> {{ details.publisher }}</h3>
+                    <h3><span class="text-pink-600">Place:</span> {{ details.place }}</h3>
+                    <h3><span class="text-pink-600">Year:</span> {{ details.year }}</h3>
+                    <h3><span class="text-pink-600">Pages:</span> {{ details.pages }}</h3>
+                    <h3><span class="text-pink-600">Weight:</span> {{ details.weight }}</h3>
+                    <h3><span class="text-pink-600">ISBN/ISSN:</span> {{ details.isbn_issn }}</h3>
+                    <h3><span class="text-pink-600">Dimensions:</span> H/W/D - {{ details.dimensions }}</h3>
+                    <h3 class="">
+                        <span class="text-pink-600">Price:
+                        </span>Rs {{ details.sale_price }}.00 <strike class="ml-3 mr-3">Rs. {{ details.original_price }}.00</strike>
+                        <span class="before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-gradient-to-r before:from-emerald-300 before:via-green-300 before:to-teal-300 relative inline-block">
+                            <span class="relative text-black px-2 mt-1">   [Save Rs. {{ calculation.save }}.00 ({{ calculation.percentage}}%)]</span>
+                        </span>
+                    </h3>
+                    
+                    <div class="mt-8 lg:mt-6 flex items-center justify-center lg:justify-start">
+
+                        {% if details.availability == "unavailable" %}
+                            <a class="pointer-events-none" href="#">
+                                <button type="button" class="text-white bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700 
+                                    hover:bg-gradient-to-bl shadow-md hover:shadow-lg hover:shadow-pink-500/50 shadow-pink-500/50 font-medium rounded-full me-2 px-5 py-2 text-center
+                                    inline-flex items-center transition-all ease-out duration-200">{{ details.availability|title }}
+                                </button>
+                        {% elif details.availability == "proceed" %}
+                            <a href="/book_buying/{{details.id}}">
+                                <button type="button" class="text-white bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700 
+                                    hover:bg-gradient-to-bl shadow-md hover:shadow-lg hover:shadow-pink-500/50 shadow-pink-500/50 font-medium rounded-full me-2 px-5 py-2 text-center
+                                    inline-flex items-center transition-all ease-out duration-200">{{ details.availability|title }}
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                    </svg>
+                                </button>
+                        {% else %}
+                            <a href="{{ details.book_link_to_other_sources }}">
+                                <button type="button" class="text-white bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700 
+                                    hover:bg-gradient-to-bl shadow-md hover:shadow-lg hover:shadow-pink-500/50 shadow-pink-500/50 font-medium rounded-full me-2 px-5 py-2 text-center
+                                    inline-flex items-center transition-all ease-out duration-200">{{ details.availability|title }}
+                                    <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                                    </svg>
+                                </button>
+                        {% endif %}
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- ! ================== Rating [+] Key Highlights ======================== -->
+            <div class="mt-8 p-2 mb-2">
+                <h1 class="text-2xl font-semibold inline-flex">Key Highlights
+                    <svg class="h-7 w-7 ml-2" fill="currentColor" viewBox="0 0 24 24"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m20.707 5.826-3.535-3.533a.999.999 0 0 0-1.408-.006L7.096 10.82a1.01 1.01 0 0 0-.273.488l-1.024 4.437L4 18h2.828l1.142-1.129 3.588-.828c.18-.042.345-.133.477-.262l8.667-8.535a1 1 0 0 0 .005-1.42zm-9.369 7.833-2.121-2.12 7.243-7.131 2.12 2.12-7.242 7.131zM4 20h16v2H4z"></path></g></svg>
+                </h1>
+                <div class="pl-4 pt-2">
+                    <h3 class="inline-flex"><span class="mr-2">Rating : </span>  4.5 <svg class="h-5 w-5 ml-2 mt-0.5" height="200px" width="200px" version="1.1" id="Layer_1" viewBox="0 0 512.001 512.001" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#FFD92D;" d="M359.736,158.439l115.73,16.093c26.037,3.62,36.621,35.526,17.909,53.991l-83.169,82.069 c-7.43,7.332-10.777,17.852-8.95,28.129l20.457,115.039c4.603,25.882-22.471,45.807-45.814,33.716L272.146,433.74 c-9.269-4.801-20.308-4.734-29.517,0.181l-103.087,55.005c-23.193,12.375-50.508-7.216-46.224-33.152l19.045-115.281 c1.702-10.3-1.774-20.776-9.294-28.017l-84.168-81.044c-18.937-18.234-8.745-50.267,17.246-54.206l115.524-17.51 c10.322-1.565,19.211-8.107,23.774-17.496l51.069-105.092c11.49-23.645,45.103-23.85,56.883-0.349l52.352,104.459 C340.427,150.569,349.396,157.001,359.736,158.439z"></path> <path style="fill:#FFE571;" d="M121.015,216.636c0-18.048,1.798-35.636,4.438-52.947l-89.306,13.534 c-25.992,3.94-36.182,35.972-17.246,54.207l84.172,81.045c7.518,7.241,10.994,17.717,9.29,28.017L93.318,455.773 c-4.287,25.936,23.033,45.527,46.224,33.152l72.007-38.422C155.471,388.6,121.015,306.743,121.015,216.636z"></path> <path style="fill:#FFA81E;" d="M493.378,228.524c18.71-18.464,8.125-50.37-17.91-53.991l-115.731-16.094 c-10.34-1.438-19.312-7.871-23.985-17.204L283.4,36.776c-11.784-23.501-45.398-23.296-56.884,0.349l-21.785,44.821 c74.297,49.588,123.276,134.128,123.276,230.154c0,48.197-12.38,93.478-34.048,132.935l81.94,42.44 c23.342,12.09,50.417-7.834,45.816-33.716l-20.461-115.038c-1.825-10.278,1.521-20.797,8.95-28.129L493.378,228.524z"></path> <g> <path style="fill:#1C2042;" d="M499.805,235.052c11.155-11.008,15.02-27.086,10.086-41.96 c-4.935-14.875-17.642-25.455-33.163-27.613c-4.996-0.687-9.633,2.798-10.329,7.807c-0.696,5.008,2.799,9.633,7.807,10.329 c8.698,1.208,15.541,6.908,18.307,15.242c2.766,8.336,0.685,16.996-5.567,23.164l-83.169,82.069 c-9.579,9.451-13.891,23.003-11.533,36.249l20.457,115.039c1.538,8.646-1.766,16.914-8.84,22.12 c-7.075,5.207-15.951,5.901-23.75,1.863l-103.753-53.737c-11.949-6.187-26.169-6.102-38.037,0.233l-103.087,55.005 c-7.75,4.134-16.635,3.547-23.772-1.572c-7.137-5.118-10.543-13.348-9.112-22.01l19.047-115.281 c2.195-13.274-2.283-26.772-11.976-36.104L25.253,224.85c-6.327-6.091-8.514-14.724-5.85-23.093 c2.662-8.369,9.435-14.152,18.119-15.468l115.525-17.51c13.301-2.016,24.754-10.446,30.637-22.546l51.069-105.095 c3.838-7.899,11.371-12.646,20.154-12.699c0.05,0,0.1,0,0.151,0c8.718,0,16.247,4.647,20.159,12.453l52.353,104.459 c6.027,12.028,17.582,20.316,30.909,22.169l28.135,3.912c5.001,0.699,9.633-2.798,10.329-7.807 c0.696-5.008-2.799-9.633-7.807-10.329l-28.135-3.912c-7.357-1.023-13.736-5.598-17.063-12.237L291.583,32.688 c-6.983-13.933-20.964-22.558-36.532-22.558c-0.085,0-0.173,0-0.259,0c-15.672,0.096-29.661,8.913-36.51,23.008l-51.067,105.094 c-3.247,6.68-9.57,11.334-16.912,12.447L34.776,168.186c-15.495,2.348-28.071,13.085-32.823,28.018 c-4.752,14.934-0.69,30.964,10.599,41.832l84.168,81.045c5.351,5.152,7.822,12.603,6.611,19.93L84.286,454.294 c-2.555,15.462,3.771,30.742,16.504,39.874c7.126,5.111,15.43,7.703,23.785,7.703c6.577,0,13.186-1.606,19.275-4.856 l103.088-55.005c6.55-3.498,14.401-3.547,20.997-0.128l103.753,53.737c13.913,7.204,30.399,5.915,43.024-3.376 c12.621-9.289,18.757-24.645,16.012-40.073l-20.457-115.039c-1.3-7.313,1.079-14.793,6.367-20.01L499.805,235.052z"></path> <path style="fill:#1C2042;" d="M444.748,179.518l6.095,0.847c0.428,0.06,0.852,0.088,1.273,0.088c4.497,0,8.419-3.315,9.056-7.895 c0.696-5.008-2.799-9.633-7.807-10.329l-6.095-0.847c-4.999-0.687-9.632,2.798-10.329,7.807 C436.245,174.196,439.741,178.821,444.748,179.518z"></path> </g> <g> <path style="fill:#FFFFFF;" d="M132.884,447.394c-4.964-0.961-8.209-5.764-7.248-10.728l11.354-58.645 c0.961-4.964,5.764-8.209,10.728-7.248c4.964,0.961,8.209,5.764,7.248,10.728l-11.354,58.645 C142.652,445.11,137.849,448.354,132.884,447.394z"></path> <path style="fill:#FFFFFF;" d="M150.596,355.916c-4.964-0.961-8.209-5.764-7.248-10.728l1.179-6.091 c0.961-4.964,5.764-8.209,10.728-7.248c4.964,0.961,8.209,5.764,7.248,10.728l-1.179,6.091 C160.363,353.634,155.56,356.878,150.596,355.916z"></path> </g> </g></svg></h3>
+                    <h3>Contributors : {{ details.contributors }}</h3>
+                    <h3>Genre : {{ details.genre }}</h3>
+                    <h3>Language : {{ details.language }}</h3>
+                    <h3>Binding : {{ details.binding }}</h3>
+                    {% if details.show_total_no_of_units_sold is True %}
+                        <h3>Total No of Units Sold : 
+                            <span class="before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-gradient-to-r before:from-purple-400 before:via-pink-300 before:to-violet-400 relative inline-block"><span class="relative text-black px-2">  {{ details.total_no_of_units_sold }} </span></span>
+                        </h3>
+                    {% endif %}
+                </div>
+            </div>
+
+
+
+
+        
+        <!-- !=========================== About the Book Section ======================= -->
+            <div class="mt-8 p-2 mb-2">
+                <h1 class="font-semibold text-2xl mb-2 inline-flex">About the Book
+                    <svg class="h-8 w-7 ml-2" viewBox="0 0 24 24" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.72848 16.1369C3.18295 14.5914 2.41018 13.8186 2.12264 12.816C1.83509 11.8134 2.08083 10.7485 2.57231 8.61875L2.85574 7.39057C3.26922 5.59881 3.47597 4.70292 4.08944 4.08944C4.70292 3.47597 5.59881 3.26922 7.39057 2.85574L8.61875 2.57231C10.7485 2.08083 11.8134 1.83509 12.816 2.12264C13.8186 2.41018 14.5914 3.18295 16.1369 4.72848L17.9665 6.55812C20.6555 9.24711 22 10.5916 22 12.2623C22 13.933 20.6555 15.2775 17.9665 17.9665C15.2775 20.6555 13.933 22 12.2623 22C10.5916 22 9.24711 20.6555 6.55812 17.9665L4.72848 16.1369Z" stroke="currentColor" stroke-width="1.5"></path> <circle cx="8.60724" cy="8.87891" r="2" transform="rotate(-45 8.60724 8.87891)" stroke="currentColor" stroke-width="1.5"></circle> <path d="M11.5417 18.5L18.5208 11.5208" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                </h1>
+                {% if details.sub_title|length < 5 and details.about_the_book|length < 5 %}
+                    <h3 class="font-semibold">Unavailable </h3>
+                {% endif %}
+
+                {% if details.sub_title|length > 5 %}
+                    <h3 class="font-semibold">Subtitle : </h3>
+                    <p class="pl-4 ">{{ details.sub_title }}</p>
+                {% endif %}
+
+                {% if details.about_the_book|length > 5 %}
+                <h3 class="font-semibold">Summary : </h3>
+                <p class="pl-4 first-line:pl-6 first-letter:text-2xl first-letter:font-meduim">
+                    {{ details.about_the_book }} 
+                </p>
+                {% endif %}
+        
+        
+            </div>
+                
+
+
+    </section>
+
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content%}
+
+
+<main class="realtive w-screen">
+ 
+
+    <!-- ?#######################  Book/Shop top Heading section  #######################  -->
+
+    <div class="box-border w-screen text-center pt-12 max-w-[80%] mx-auto pb-16">
+        <div class="box-border flex items-center justify-center pt-12">
+            <svg class="w-20 h-20 text-slate-700" fill="currentColor" height="200px" width="200px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g transform="translate(1 1)"> <g> <g> <path d="M103.96,216.6c3.413,2.56,7.68,4.267,11.947,4.267c1.707,0,3.413,0,4.267,0l226.133-47.787 c8.533-1.707,15.36-9.387,15.36-18.773V74.093c0-5.973-2.56-11.093-6.827-14.507c-4.267-4.267-10.24-5.12-16.213-4.267 l-226.133,46.933c-8.533,1.707-15.36,9.387-15.36,18.773v80.213C97.133,207.213,99.693,213.187,103.96,216.6z M114.2,121.027 c0-0.853,0.853-1.707,1.707-1.707L342.04,72.387c0.853,0,1.707,0,1.707,0s0.853,0.853,0.853,1.707v81.067 c0,0.853-0.853,1.707-1.707,1.707L116.76,203.8c-0.853,0-1.707-0.853-1.707-0.853s-0.853-0.853-0.853-1.707V121.027z"></path> <path d="M395.8,50.2V24.6c0-11.947-8.533-25.6-22.187-25.6L82.627,58.733C71.533,61.293,63,71.533,63,82.627V459.8v8.533 C63,492.227,81.773,511,105.667,511H447v-76.8v-17.067V50.2H395.8z M86.04,75.8l288.427-59.733 c1.707,0.853,4.267,4.267,3.413,8.533v346.453c0,2.56-1.707,5.12-4.267,5.12l-268.8,40.96c-4.7,0-9.186,0.856-13.351,2.353 c-4.137,1.42-7.972,3.441-11.396,5.977V82.627C80.067,79.213,82.627,76.653,86.04,75.8z M429.933,493.933H105.667 c-14.507,0-25.6-11.093-25.6-25.6V459.8c0-14.507,11.093-25.6,25.6-25.6h324.267V493.933z M219.16,417.133l157.867-23.893 c11.093-1.707,18.773-11.093,18.773-22.187V67.267h34.133v349.867H219.16z"></path> </g> </g> </g> </g></svg>
+        </div>
+        <h2 class="text-4xl text-center lg:text-6xl font-bold lg:leading-[.80] tracking-tighter text-slate-800 pt-8">BOOKS</h2>
+        <p class="pt-8 leading-6 tracking-wide lg:max-w-[70%] mx-auto relative">Shop the latest editions of <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-gradient-to-r before:from-teal-600 before:via-green-500 before:to-lime-500 relative inline-block"><span class="relative text-white">popular Books</span></span>  by Dr. Badan Barman.</p>
+    </div>
+
+
+    <!-- ! ++++++++++++++++++++  For loop  Starts for the book ++++++++++++++++++++  -->
+
+    <div class="flex flex-col lg:grid-cols-3 max-w-[90%] mx-auto mb-20">
+        
+
+        {% for book in books %}
+        <!-- *@@@@@@@@@@@@@@@@@   CARD    @@@@@@@@@@@@@@@ -->
+        <section class="flex flex-col lg:flex-row py-8 lg:first:border-t-2 border-b-2 border-slate-300 w-[100%] items-start">
+            
+
+
+            <!-- *********************   Book Image ******************* -->
+            <div class="pb-8 lg:pb-0 flex justify-center items-center h-60 w-full lg:w-[30%] lg:border-r-2 border-slate-300">
+                <img class="h-60 rounded-lg" src="/{{ book.image}}" alt="book_image">
+            </div>  
+            
+
+
+            <!-- *********************  Book Content ****************** -->
+            <div class="relative px-4 md:px-10 w-full lg:w-[70%] flex flex-col place-items-start justify-between lg:min-h-60">
+
+                <div class="box-border">
+                    <h3 class="pb-2 text-xl font-semibold bg-gradient-to-r from-slate-950 via-slate-900 to-slate-800 bg-clip-text text-transparent">{{ book.title|slice:":55" }}{% if book.title|length > 55 %}...{% else %} {% endif %}</h3>
+                    <p><span class="text-pink-600">Subtitle :</span> {{ book.sub_title|slice:":60" }}...</p>
+                    <p><span class="text-pink-600">Publisher :</span> {{ book.publisher }}</p>
+                    <p class="hidden lg:block"><span class="text-pink-600">Year :</span> {{ book.year }}</p>
+                    <p class="hidden lg:block"><span class="text-pink-600">Pages :</span> {{ book.pages }}</p>
+                    <p class="mb-4"> <span class="text-pink-600">Price :</span> <span  class="font-semibold">&#x20b9 {{ book.sale_price }}</span> <span class="stroke-white font-normal ml-4"> &#x20b9 <strike> {{ book.original_price }} </strike></span></p>
+                </div>
+
+                <div class="flex items-center justify-center lg:items-start lg:justify-start w-full">
+                    <a href="/book_details/{{book.id}}">
+                        <button class="py-2 px-5 rounded-full bg-slate-900 text-white hover:bg-purple-600 me-2 inline-flex items-center transition-all ease-out duration-200 shadow-md">About
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+
+            </div>
+
+
+        </section>
+        {% endfor %}
+
+
+    </div>
+
+
+
+
+
+
+    {% comment %}
+
+    <!-- ! ++++++++++++++++++++++++ Writing the colors to the output.css before hand ++++++++++++++++++++ -->
+    <div class="hidden">
+        <span class="bg-gradient-to-b from-rose-300 via-rose-100 to-rose-100 ring-rose-300"></span>
+        <span class="bg-gradient-to-b from-pink-300 via-pink-100 to-pink-100 ring-pink-300"></span>
+        <span class="bg-gradient-to-b from-fuchsia-300 via-fuchsia-100 to-fuchsia-100 ring-fuchsia-300"></span>
+        <span class="bg-gradient-to-b from-violet-300 via-violet-100 to-violet-100 ring-violet-300"></span>
+        <span class="bg-gradient-to-b from-indigo-300 via-indigo-100 to-indigo-100 ring-indigo-300"></span>
+        <span class="bg-gradient-to-b from-blue-300 via-blue-100 to-blue-100 ring-blue-300"></span>
+        <span class="bg-gradient-to-b from-cyan-300 via-cyan-100 to-cyan-100 ring-cyan-300"></span>
+        <span class="bg-gradient-to-b from-teal-300 via-teal-100 to-teal-100 ring-teal-300"></span>
+        <span class="bg-gradient-to-b from-emerald-300 via-emerald-100 to-emerald-100 ring-emerald-300"></span>
+        <span class="bg-gradient-to-b from-green-300 via-green-100 to-green-100 ring-green-300"></span>
+        <span class="bg-gradient-to-b from-lime-300 via-lime-100 to-lime-100 ring-lime-300"></span>
+        <span class="bg-gradient-to-b from-yellow-300 via-yellow-100 to-yellow-100 ring-yellow-300"></span>
+        <span class="bg-gradient-to-b from-orange-300 via-orange-100 to-orange-100 ring-orange-300"></span>
+        <span class="bg-gradient-to-b from-stone-300 via-stone-100 to-stone-100 ring-stone-300"></span>
+        <span class="bg-gradient-to-b from-red-300 via-red-100 to-red-100 ring-red-300"></span>
+        <span class="bg-gradient-to-b from-gray-300 via-gray-100 to-gray-100 ring-gray-300"></span>
+    </div>
+
+        
+
+    
+
+    <div class="grid grid-col-1 lg:grid-cols-3 gap-10 max-w-[90%] mx-auto mb-20">
+
+    {% for book in books %}
+    <!-- ! ======================= Individual Book Card ==================={{ book.id }} -->
+    <section class="p-5 py-10 bg-gradient-to-b from-{{book.book_cover_color}}-300 via-{{book.book_cover_color}}-100 to-{{book.book_cover_color}}-100 text-center ring-{{book.book_cover_color}}-300 ring-2 ring-inset transform duration-500 hover:-translate-y-2 cursor-pointer rounded-xl shadow-lg hover:shadow-xl">
+    <!-- <section class="p-5 py-10 bg-{{book.book_cover_color}}-300 text-center ring-{{book.book_cover_color}}-300 ring-2 ring-inset duration-500 cursor-pointer rounded-xl shadow-lg hover:shadow-xl"> -->
+        <div class="flex justify-center items-center h-80">
+            <img class="h-80 rounded-lg" src="/{{book.image}}" alt="book_image">
+        </div>
+    
+        <div class="flex-col">
+            <h1 class="text-2xl my-5">{{ book.title|slice:":30" }}...</h1>
+            <p class="mb-5">{{ book.sub_title|slice:":30" }}...</p>
+            <h2 class="font-semibold mb-5">&#x20b9 {{ book.sale_price }} <span class="stroke-white font-normal ml-4"> &#x20b9 <strike>{{ book.original_price }}</strike></span></h2>
+            <a href="/book_details/{{book.id}}">
+            <button class="py-2.5 px-5 rounded-full bg-slate-900 text-white hover:bg-purple-600 me-2 inline-flex items-center transition-all ease-out duration-200 shadow-md">About
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </button>
+           </a>
+        </div>
+    </section>
+
+    {% endfor %}
+    </div>
+
+    {% endcomment %}
+
+
+
+</main>
+
+
+{% endblock %}

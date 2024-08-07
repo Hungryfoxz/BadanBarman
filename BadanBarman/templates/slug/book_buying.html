@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<main class="relative w-screen mb-20 overflow-x-clip" style="overflow-x: clip;">
+
+    <section class="w-[85%] lg:w-[80%] pt-20 mx-auto text-slate-700 flex flex-col">
+
+
+        <div class="box-border flex items-center justify-center border-b-2 pb-8">
+            <img class="h-[20rem] py-4 lg:py-0" src="/{{ buying.image }}" alt="title image">
+        </div>
+
+
+
+        <div class="py-8 justify-items-start border-b-2">
+            <h1 class="mb-3 text-2xl font-semibold">{{ buying.title }}</h1>
+            <h3><span class="text-pink-600">Sub-Title:</span> {{ buying.sub_title|slice:":30" }}...</h3>
+            <h3><span class="text-pink-600">Author / Editor / Compiler:</span> {{ buying.author_editor_compiler }}</h3>
+            <h3><span class="text-pink-600">Publisher:</span> {{ buying.publisher }}</h3>
+            <h3><span class="text-pink-600">Place:</span> {{ buying.place }}</h3>
+            <h3><span class="text-pink-600">Year:</span> {{ buying.year }}</h3>
+            <h3><span class="text-pink-600">Pages:</span> {{ buying.pages }}</h3>
+            <h3><span class="text-pink-600">ISBN/ISSN:</span> {{ buying.isbn_issn }}</h3>
+        </div>
+
+
+
+
+
+        <div class="gap-2 mt-6">
+            <h1 class="font-semibold text-2xl mb-2">Buying Information.</h1>
+
+            <div>
+                <h3 class="font-semibold mb-2">Purchase the Book Online from Dr. Badan Barman</h3>
+                <p><span class="font-semibold">Step 1:</span> Kindly pay the discounted price of the book through UPI Pay to badanbarman@oksbi or to 9864205166@apl or through Google Pay to 9864205166 or by cash / cheque / core / internet banking / ATM Transfer / Mobile Banking in the account Name: Badan Barman, Account No.: 20001479661, Bank: State Bank of India, Branch: Gauhati University, IFSC Code: SBIN0002060.</p>
+                <p><span class="font-semibold">Step 2:</span> <span class="bg-teal-300/80 px-2 py-0.5 rounded-full">Click Here</span> to Fill Details to Buy Book so that we can send the book by post.</p>
+                <p><span class="font-semibold">Step 3:</span> After two working days <span class="bg-teal-300/80 px-2 py-0.5 rounded-full">Click Here</span> to Find Out the Tracking Id of India Post.</p>
+                <p class="relative"><span class="font-semibold">Step 4:</span> You can expect to receive the book at your own office or home address within <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-300 relative inline-block"><span class="relative text-slate-900">10-20</span></span> days of placing the order for the book.</p>
+            </div>
+
+            <div class="pt-6">
+                <h3 class="font-semibold mb-2">Purchase the Book Physically from Author</h3>
+                <p>You can also buy the book personally from Dr. Badan Barman,Assistant Professor
+                Department of Library and Information Science, Ground Floor - Main Arts Building, 
+                Gauhati University, Guwahati-781014, Assam, NorthEast of India.</p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+{% endblock %}

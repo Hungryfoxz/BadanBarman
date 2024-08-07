@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<!-- ! ########################################################################################################################################################### -->
+<!-- !*                                                                  This page contains the code for WebPage                                                   -->
+<!-- ! ########################################################################################################################################################### -->
+
+<main class="relative bg-slate-100">
+
+    <div class="box-border w-screen text-center pt-12 max-w-[80%] mx-auto">
+        <div class="box-border flex items-center justify-center  pt-20">
+            <svg class="h-20 w-20 text-slate-700" viewBox="0 0 24 24" fill="none"><path d="M7 8L3 11.6923L7 16M17 8L21 11.6923L17 16M14 4L10 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+        <h2 class="text-4xl text-center lg:text-6xl font-bold lg:leading-[.80] tracking-tighter text-slate-800 pt-8">WEBSITES</h2>
+        <p class="pt-4 leading-6 tracking-wide">Dr. Badan Barman designed and developed the following 12 websites.</p>
+    </div>
+
+    <!-- ! +++++++++++++++++++  USE THIS MARGINS AND PADDING EVERYWHERE +++++++++++++++++++++++++++ -->
+
+    <section class="py-16 grid grid-cols-4 gap-8 lg:gap-12 mx-auto max-w-[85%] lg:max-w-[80%]">
+
+        {% for website in websites %}
+        
+        <div class="website-cards col-span-4 lg:col-span-2 relative rounded-[1.1rem] lg:rounded-[1.25rem] p-0.5 lg:p-1 bg-gradient-to-r from-cyan-400 via-cyan-200 to-fuchsia-400 text-slate-800/95 shadow-lg hover:shadow-xl ease-out transition-all duration-300">
+            <div class="relative p-4 lg:p-8 flex flex-col items-start bg-slate-100 bg-opacity-75 backdrop-blur-3xl rounded-2xl">
+                <h3 class="lg:leading-6 lg:tracking-wide pb-1"><span class="font-semibold">Site Name: </span><span class="bg-gradient-to-tr from-fuchsia-600 to-rose-600 text-transparent bg-clip-text">{{ website.name }}</span></h3>
+                <h3 class="lg:leading-6 lg:tracking-wide pb-1"><span class="font-semibold">Website Address:</span> {{ website.address }}</h3>
+                <h3 class="lg:leading-6 lg:tracking-wide pb-1"><span class="font-semibold">Category:</span> {{ website.category }}</h3>
+                <h3 class="lg:leading-6 lg:tracking-wide pb-1"><span class="font-semibold">Date Of Development:</span> {{ website.year_of_development }}</h3>
+                <h3 class="lg:leading-6 lg:tracking-wide pb-8"><span class="font-semibold">Platform / Language Used: </span> {{website.framework}}</h3>
+                <div class="absolute bottom-2 right-0.5 lg:top-2 lg:right-0.5">
+                    <a href="{{ website.address }}">
+                    <button type="button" class="text-white group bg-gradient-to-bl from-purple-300 via-purple-400 to-purple-400 
+                        hover:bg-gradient-to-tr shadow-md hover:shadow-lg hover:shadow-slate-50/50 shadow-slate-50/50 rounded-full me-2 px-2.5 py-2.5
+                        inline-flex items-center transition-all ease-out duration-200">
+                            <svg class="-rotate-45 w-3.5 h-3.5 group-hover:rotate-0 transition-all duration-300 ease-out focus:rotate-0" aria-hidden="true" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+
+
+    </section>
+
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<!-- ! ########################################################################################################################################################### -->
+<!-- !*                                                                  This page contains the code for WebPage                                                   -->
+
+<main class="relative bg-slate-100">
+
+    <div class="box-border w-screen text-center pt-12 max-w-[80%] mx-auto">
+        <div class="box-border flex items-center justify-center  pt-20">
+            <svg class="h-20 w-20" viewBox="0 0 24 24" fill="none"><path d="M2 12C2 16.714 2 19.0711 3.46447 20.5355C4.92893 22 7.28595 22 12 22C16.714 22 19.0711 22 20.5355 20.5355C22 19.0711 22 16.714 22 12V10.5M13.5 2H12C7.28595 2 4.92893 2 3.46447 3.46447C2.49073 4.43821 2.16444 5.80655 2.0551 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path> <path d="M16.652 3.45506L17.3009 2.80624C18.3759 1.73125 20.1188 1.73125 21.1938 2.80624C22.2687 3.88124 22.2687 5.62415 21.1938 6.69914L20.5449 7.34795M16.652 3.45506C16.652 3.45506 16.7331 4.83379 17.9497 6.05032C19.1662 7.26685 20.5449 7.34795 20.5449 7.34795M16.652 3.45506L10.6872 9.41993C10.2832 9.82394 10.0812 10.0259 9.90743 10.2487C9.70249 10.5114 9.52679 10.7957 9.38344 11.0965C9.26191 11.3515 9.17157 11.6225 8.99089 12.1646L8.41242 13.9M20.5449 7.34795L17.5625 10.3304M14.5801 13.3128C14.1761 13.7168 13.9741 13.9188 13.7513 14.0926C13.4886 14.2975 13.2043 14.4732 12.9035 14.6166C12.6485 14.7381 12.3775 14.8284 11.8354 15.0091L10.1 15.5876M10.1 15.5876L8.97709 15.9619C8.71035 16.0508 8.41626 15.9814 8.21744 15.7826C8.01862 15.5837 7.9492 15.2897 8.03811 15.0229L8.41242 13.9M10.1 15.5876L8.41242 13.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        </div>
+        <h2 class="text-4xl text-center lg:text-6xl font-bold lg:leading-[.80] tracking-tighter text-slate-800 pt-8 uppercase">chapters in edited books</h2>
+    </div>
+
+    <!-- ! +++++++++++++++++++  USE THIS MARGINS AND PADDING EVERYWHERE +++++++++++++++++++++++++++ -->
+
+    <section class="py-16 grid grid-cols-4 gap-8 lg:gap-12 mx-auto max-w-[80%]">
+
+
+    
+        {% for chapter in chapters %}
+
+        <!-- ! ====== Individual cards ======== -->
+        <div class="chapters-cards col-span-4 lg:col-span-2 relative rounded-[1.25rem] p-0.5 bg-gradient-to-r from-cyan-300 via-cyan-100 to-fuchsia-300 text-slate-800/95 shadow-lg hover:shadow-2xl ease-out transition-all duration-300">
+            
+            <div class="relative p-6 lg:p-8 flex flex-col justify-between bg-slate-100 bg-opacity-65 backdrop-blur-3xl rounded-[1.2rem] box-border h-full">
+                
+                <div class="box-border flex flex-col items-center justify-between">
+                   
+                    <!-- ? |||||||  Top Logo |||||| -->
+                    <div class="flex items-center justify-center place-items-center w-full">
+                        <svg class="w-10 h-10" viewBox="0 0 24 24" fill="currentColor"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M5,14 L5,5 L19,5 L19,20 L11,20 M19,16 L23,16 L23,1 L9,1 L9,5 M5,16 L5,24 M9,20 L1,20"></path></svg>
+                    </div>
+                    <h3 class="text-center lg:leading-6 lg:tracking-wide pb-1 lg:pt-3"><span class="bg-gradient-to-tr from-fuchsia-600 to-rose-600 text-transparent bg-clip-text text-center">{{ chapter.chapter_title }}</span></h3>
+                    
+                    
+                    
+                    <!-- ? ------ Main Heading ------ + ------- Border ------- + --------- Download Button -------- -->
+                    <div class="relative flex flex-col items-start w-full border-t-2 mt-7 border-slate-400/40">
+                        
+                        <h3 class="lg:leading-6 lg:tracking-wide pb-1 pt-8"><span class="text-sm tracking-wider text-pink-600">Book: </span> {{ chapter.book_name }}</h3>
+                        <h3 class="lg:leading-6 lg:tracking-wide pb-1"><span class="text-sm tracking-wider text-pink-600">Editor(s): </span>{{ chapter.editors }} </h3>
+                        <h3 class="lg:leading-6 lg:tracking-wide pb-1"><span class="text-sm tracking-wider text-pink-600">Pubished By: </span>{{ chapter.published_by }}</h3>
+                    
+                    </div>
+                </div>
+
+                
+                
+                <!-- ? Pills at the bottom..... -->
+                <div class="flex flex-row flex-wrap gap-3 items-center w-full mt-4">
+                    
+                    <!-- ? ======= YEAR ======= -->
+                    
+                    <div class="bg-gradient-to-r from-pink-200 via-red-300 to-pink-400 px-3 py-1 rounded-full shadow-md inline-flex">
+                        <p class="leading-6 tracking-wide text-slate-900"><span class="text-sm">Year: </span>{{ chapter.year }}</p>
+                    </div>
+                    
+                    <!-- ? ======= PAGES ====== -->
+
+                    <div class="bg-gradient-to-r from-emerald-300 via-green-300 to-teal-400 px-3 py-1 rounded-full shadow-md inline-flex">
+                        <p class="leading-6 tracking-wide text-slate-900"><span class="text-sm text">Pages: </span> {{ chapter.pages }} </p>
+                    </div>
+
+                    <!-- ? ======= PAGES ====== -->
+                    {% if chapter.along_with|length > 4 %}
+                    <div class="bg-gradient-to-r from-emerald-300 via-green-300 to-teal-400 px-3 py-1 rounded-full shadow-md inline-flex">
+                        <p class="leading-6 tracking-wide text-slate-900"><span class="text-sm">Along with: </span> {{ chapter.along_with }} </p>
+                    </div>
+                    {% endif %}
+                </div>
+
+                
+                
+                <!-- ! ============= Visit Button Absolute Positioning ============ -->
+                {% if chapter.link_available %}
+
+                    {% if chapter.link|length > 10 %}
+                    <a class="absolute inline-flex group top-2 right-2 p-1 px-3 rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 text-white shadow-lg hover:shadow-xl transition-all duration-300 ease-out" href="{{ chapter.link }}" download="{{ chapter.link }}">
+                        <svg class="h-5 w-5 group-hover:text-slate-700 transition-all duration-300 ease-out" viewBox="0 -0.5 25 25" fill="none"><path d="M15.5 7.75C15.0858 7.75 14.75 8.08579 14.75 8.5C14.75 8.91421 15.0858 9.25 15.5 9.25V7.75ZM19.5 9.25C19.9142 9.25 20.25 8.91421 20.25 8.5C20.25 8.08579 19.9142 7.75 19.5 7.75V9.25ZM20.25 8.5C20.25 8.08579 19.9142 7.75 19.5 7.75C19.0858 7.75 18.75 8.08579 18.75 8.5H20.25ZM18.75 12.5C18.75 12.9142 19.0858 13.25 19.5 13.25C19.9142 13.25 20.25 12.9142 20.25 12.5H18.75ZM20.0303 9.03033C20.3232 8.73744 20.3232 8.26256 20.0303 7.96967C19.7374 7.67678 19.2626 7.67678 18.9697 7.96967L20.0303 9.03033ZM12.5 15.5L11.9697 16.0303C12.2626 16.3232 12.7374 16.3232 13.0303 16.0303L12.5 15.5ZM9.5 12.5L10.0303 11.9697C9.73744 11.6768 9.26256 11.6768 8.96967 11.9697L9.5 12.5ZM4.96967 15.9697C4.67678 16.2626 4.67678 16.7374 4.96967 17.0303C5.26256 17.3232 5.73744 17.3232 6.03033 17.0303L4.96967 15.9697ZM15.5 9.25H19.5V7.75H15.5V9.25ZM18.75 8.5V12.5H20.25V8.5H18.75ZM18.9697 7.96967L11.9697 14.9697L13.0303 16.0303L20.0303 9.03033L18.9697 7.96967ZM13.0303 14.9697L10.0303 11.9697L8.96967 13.0303L11.9697 16.0303L13.0303 14.9697ZM8.96967 11.9697L4.96967 15.9697L6.03033 17.0303L10.0303 13.0303L8.96967 11.9697Z" fill="currentColor"></path></svg>
+                        <span class="text-sm mr-2 ml-1 group-hover:text-slate-700 transition-all duration-300 ease-out">Visit</span>
+                    </a>
+                    {% endif %}
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+        
+
+
+    </section>
+
+
+</main>
+
+{% endblock %}

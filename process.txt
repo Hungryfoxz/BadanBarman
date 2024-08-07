@@ -1,0 +1,98 @@
+install python latest version
+install pip latest version
+install virtual environment
+
+$ python3 -m venv env
+
+$.env/bin/activate  >> this will activate the environment
+
+$ python -m pip freeze > requirements.txt  >> this will write the current version of the softwares in the file...
+
+$ python -m pip install django==2.2.11  >>  This command will install the specific version of django...
+
+$ python -m pip install -r requirements.txt  >>  The command reads all names and versions of the pinned packages from your requirements.txt file and installs the specified version of each package in your virtual environment.
+
+then start building the project ...
+
+$ python -m django startproject "NameofProject"
+
+$ py manage.py runserver
+
+$ py manage.py startapp BadanBarman
+
+$  py manage.py makemigrations
+
+$ py manage.py migrate
+
+
+Integration of Tailwind css >>>> 
+There are (at least) 3 different methods to install Tailwind with Django properly.
+
+1st method: NPM
+This is the preferred method if you need node in your project (e.g : add plugins like Daisy UI, or have a SPA)
+
+Installing tailwindCSS and build/minify processes
+
+Create a new directory within your Django project, in which you'll install tailwindCSS like in any vanilla JS project setup:
+
+$ cd your-django-folder;
+$ mkdir jstoolchain; cd jstoolchain
+$ npm init -y
+$ npm install -D tailwindcss
+$ npx tailwindcss init
+
+Configure your template paths in tailwind.config.js that have just been created, by specifying the right place to parse your content. This could be something like below or a little different, depending on where your templates are located:
+...
+content: ["../templates/**/*.{html,js}"],
+...
+
+In your-django-folder, create an input.css file and add at least this in it:
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+In your package.json file, you can prepare npm scripts to ease execution of build / minify tasks (adapt the paths according to your Django static folder location):
+
+"scripts": {
+      // use in local environment
+      "tailwind-watch": "tailwindcss -i ../input.css -o ../static/css/output.css --watch",
+      // use in remote environment
+      "tailwind-build": "tailwindcss -i ../input.css -o ../static/css/output.css --minify"
+    }
+
+In your jstoolchains folder, keep running "$ npm run tailwind-watch" while you're coding. This will ensure that your output.css file is regenerated as soon as you add a new tailwind class to your code. Add this file to .gitignore.
+
+If tailwind-watch is running without error, output.css file should now be filled with CSS. Now you can actually use tailwindCSS classes, by including the outputted css file into a Django template file along with Django's call to load the static files:
+
+{% load static %}
+
+<head>
+  <link rel="stylesheet" href="{% static "css/output.css" %}">
+</head>
+Don't forget to include the npm run tailwind-build script in your deployment process. This will build the output and remove unused classes to ensure a lower file size.
+Handling auto-reload locally
+
+What's missing now to ease development, is to auto-reload the django development server when an HTML file is changed and saved. The best extension to deal with this is Django-browser-reload. Just follow setup instructions, this will work as expected out of the box...
+
+
+
+Installing GSAP >>>>
+
+Download the GSAP library :  Download the GSAP library from the official website (https://gsap.com/) and place the necessary JavaScript files (gsap.min.js or the specific version you need) in a static directory within your Django project (e.g., static/js/).
+
+Load GSAP in your Templates:
+
+In your Django templates where you want to use GSAP animations, include a script tag to load the GSAP library. If you placed the library in your static directory, use the static template tag:
+
+<script src="{% static 'js/gsap.min.js' %}"></script>
+
+
+FOnts added >>>>
+Poppins from google fonts...downloaded and added to fonts folder in the static directory.... 
+
+
+
+
+
