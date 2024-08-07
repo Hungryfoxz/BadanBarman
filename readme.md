@@ -1,10 +1,10 @@
 
-# BADAN BARMAN
-
 <div style="align:center">
- <h4>This is the Personal Portfolio Designed for Dr Badan Barman.</h4>
  <img src="BadanBarman/static/images/main_logo.png" alt="django-image" width="5%">
 </div>
+# BADAN BARMAN
+
+ <h4>This is the Personal Portfolio Designed for Dr Badan Barman.</h4>
  
 
 ______________________________________________________________________________________
@@ -26,7 +26,7 @@ ________________________________________________________________________________
 # Usage
 
 #### To get it up and running quickly:
-Make sure you have python@latest or above installed on your machine.
+Make sure you have python@latest on your machine.
 
 
 ### The easier method :
