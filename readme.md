@@ -10,7 +10,7 @@ This is the Personal Portfolio Designed for Dr Badan Barman.
 ______________________________________________________________________________________
 # Software Used
 <div>
- <img src="./screenshots/Django.png" alt="django-image">
+ <img src="./screenshots/Django.png" alt="django-image" width="50%">
 </div>
 
 The project is build with Django. The Database is the ~Sqlite3 which comes in built with the Django Framework,since the amount of data we are dealing with is very small so no external database is implemented.  
@@ -22,7 +22,7 @@ Tailwind CSS is used for the styles.
 
 
 
-_______________________________________________________________________________________________________________________________________________________________________
+________________________________________________________________________________________
 # Usage
 
 #### To get it up and running quickly:
@@ -79,22 +79,22 @@ Now you will see a directory tree something like this.
 >##### BadanBarman
 
 
->######    |+..../BadanBarman
+>######    |+......./BadanBarman
 
 
->######    |+..../setup
+>######    |+......./setup
 
 
->######    |+..../jstoolchain
+>######    |+......./jstoolchain
 
 
->######    |+..../static
+>######    |+......./static
 
 
->######    |+..../templates
+>######    |+......./templates
 
 
->######    |+..../db
+>######    |+......./db
 
 
 >######    |+..../input.css
@@ -154,7 +154,7 @@ Login to the admin panel with this url :
 > ##### badan@123
 
 
-After you are successfully logged in , Go to the users table and add New user and select the previledges. Add new admin and password as your choice and give him the 'super-user' access and after the new 'super-user' is created remove the default superuser.
+After you have successfully logged in , Go to the users table and add New user and select the previledges. Add new admin and password as your choice and give him the 'super-user' access and after the new 'super-user' is created remove the default superuser.
 
 
 
@@ -169,7 +169,7 @@ After you are successfully logged in , Go to the users table and add New user an
 > On successfull Completion of the Server setup , You will be greeted with this page.
 
 
-
+```Home```
 <div style="align:center">
  <img src="./screenshots/hero.png" alt="django-image">
 </div>
@@ -177,22 +177,55 @@ After you are successfully logged in , Go to the users table and add New user an
 
 > Some sample images from the site are given below :
 
-<div style="display: flex; align-items: evenly; justify: around;">
- <img src="./screenshots/menu.png" alt="menu-image" width="50%"></img>
- <img src="./screenshots/lectures.png" alt="lectures-image" width="50%"></img>
- <img src="./screenshots/contact.png" alt="contact-image" width="50%"></img>
- <img src="./screenshots/ppts.png" alt="ppts-image" width="50%"></img>
- <img src="./screenshots/publications.png" alt="publicaitons-image" width="50%"></img>
- <img src="./screenshots/bookbuy.png" alt="bookbuy-image" width="50%"></img>
- <img src="./screenshots/scholar.png" alt="scholar-image" width="50%"></img>
- <img src="./screenshots/books.png" alt="books-image" width="50%"></img>
- <img src="./screenshots/footer.png" alt="footer-image" width="50%"></img>
+```Menu```
+<div style="align:center">
+ <img src="./screenshots/menu.png" alt="menu-image" width="80%"></img>
+</div>
+
+```Invites Lectures```
+<div style="align:center">
+ <img src="./screenshots/lectures.png" alt="lectures-image" width="80%"></img>
+ </div>
+
+ ```Contact```
+<div style="align:center">
+ <img src="./screenshots/contact.png" alt="contact-image" width="80%"></img>
+ </div>
+
+ ```PPTs```
+<div style="align:center">
+ <img src="./screenshots/ppts.png" alt="ppts-image" width="80%"></img>
+ </div>
+
+ ```Publicaitons```
+<div style="align:center">
+ <img src="./screenshots/publications.png" alt="publicaitons-image" width="80%"></img>
+ </div>
+
+ ```Book Details Page for buying or downloading```
+<div style="align:center">
+ <img src="./screenshots/bookbuy.png" alt="bookbuy-image" width="80%"></img>
+ </div>
+
+ ```Research Scholars```
+<div style="align:center">
+ <img src="./screenshots/scholar.png" alt="scholar-image" width="80%"></img>
+ </div>
+
+ ```Books```
+<div style="align:center">
+ <img src="./screenshots/books.png" alt="books-image" width="80%"></img>
+ </div>
+
+ ```Footer```
+<div style="align:center">
+ <img src="./screenshots/footer.png" alt="footer-image" width="80%"></img>
 </div>
 
 
 
-### ``` Database area```Websites,Research_Scholars, Invited_Lectures, Projects, Awards, Presentation, Articles_In_Journals, Chapters_In_Edited_Books, Books, Periodicals
-> The Databse to control all the Tables from adding usrs to creating BadanBarman.
+### ``` Database area```
+> The Database to control all the Tables for inserting data.
 
 >```Websites``` --- It is the table that shows the websites created by BadanBarman.
 >```Research_Scholars``` --- It is the table that shows the Research_Scholars under BadanBarman.
