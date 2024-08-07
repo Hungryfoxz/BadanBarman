@@ -1,57 +1,17 @@
-####################################################
-       Project Name : BADAN BARMAN PORTFOLIO
-####################################################
-date : 01.06.2024
-*Start with creating an stanalone environment for the project..
-$py -m venv <name_of_environment>
-$py -m pip install django
-$django-admin startproject <project_name>
-$ cd <project_name>
-$ django-admin startapp <app_name>
-$ py mange.py createsuperuser    =>Username : badan, Passwd : badan@123
-   added normal user    => Username : precidingofficer, Password: notanadmin@123
-##########################################
-FIle Structure >>
-	--BadanBarman
-	   |________ settings.py
-	   |________ urls.py
-	   |________ wsgi.py
-	   |________ asgi.py
-	   |_______ __init__.py
-	--PO
-	   |________ migrations	  
-	   |________ __init__.py
-	   |________ admin.py
-	   |________ apps.py
-	   |________ models.py
-	   |________ urls.py
-	   |________ views.py
-	   |________ tests.py
-	--static
-	--templates
-	   |________ base.html
-	   |________ index.html
-	   |________ login.html
-	   |________ povo_home.html
-	   |________ preciding_officer.html
-	   |________ voter.html
-	   |________ voter_show_BadanBarman.html
-	--db
-	--manage
-#############################################
+
 # BADAN BARMAN
 
 This is the Personal Portfolio Designed for Dr Badan Barman.
 <div style="align:center">
- <img src="BadanBarman/static/images/main_logo.png" alt="django-image">
+ <img src="BadanBarman/static/images/main_logo.png" alt="django-image" width="50%">
 </div>
  
 
-_______________________________________________________________________________________________________________________________________________________________________
+______________________________________________________________________________________
 # Software Used
 <div>
  <img src="./screenshots/Django.png" alt="django-image">
- </div>
+</div>
 
 The project is build with Django. The Database is the ~Sqlite3 which comes in built with the Django Framework,since the amount of data we are dealing with is very small so no external database is implemented.  
 
@@ -217,16 +177,16 @@ After you are successfully logged in , Go to the users table and add New user an
 
 > Some sample images from the site are given below :
 
-<div style="align: start">
- <img src="./screenshots/menu.png" alt="menu-image" width="30%"></img>
- <img src="./screenshots/lectures.png" alt="lectures-image" width="30%"></img>
- <img src="./screenshots/contact.png" alt="contact-image" width="30%"></img>
- <img src="./screenshots/ppts.png" alt="ppts-image" width="30%"></img>
- <img src="./screenshots/publications.png" alt="publicaitons-image" width="30%"></img>
- <img src="./screenshots/booksbuy.png" alt="booksbuy-image" width="30%"></img>
- <img src="./screenshots/scholar.png" alt="scholar-image" width="30%"></img>
- <img src="./screenshots/books.png" alt="books-image" width="30%"></img>
- <img src="./screenshots/footer.png" alt="footer-image" width="30%"></img>
+<div style="display: flex; align-items: evenly; justify: around;">
+ <img src="./screenshots/menu.png" alt="menu-image" width="50%"></img>
+ <img src="./screenshots/lectures.png" alt="lectures-image" width="50%"></img>
+ <img src="./screenshots/contact.png" alt="contact-image" width="50%"></img>
+ <img src="./screenshots/ppts.png" alt="ppts-image" width="50%"></img>
+ <img src="./screenshots/publications.png" alt="publicaitons-image" width="50%"></img>
+ <img src="./screenshots/bookbuy.png" alt="bookbuy-image" width="50%"></img>
+ <img src="./screenshots/scholar.png" alt="scholar-image" width="50%"></img>
+ <img src="./screenshots/books.png" alt="books-image" width="50%"></img>
+ <img src="./screenshots/footer.png" alt="footer-image" width="50%"></img>
 </div>
 
 
