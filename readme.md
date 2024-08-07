@@ -1,16 +1,16 @@
 
 # BADAN BARMAN
 
-This is the Personal Portfolio Designed for Dr Badan Barman.
 <div style="align:center">
- <img src="BadanBarman/static/images/main_logo.png" alt="django-image" width="50%">
+ <h4>This is the Personal Portfolio Designed for Dr Badan Barman.</h4>
+ <img src="BadanBarman/static/images/main_logo.png" alt="django-image" width="10%">
 </div>
  
 
 ______________________________________________________________________________________
 # Software Used
 <div>
- <img src="./screenshots/Django.png" alt="django-image" width="50%">
+ <img src="./screenshots/Django.png" alt="django-image" width="30%">
 </div>
 
 The project is build with Django. The Database is the ~Sqlite3 which comes in built with the Django Framework,since the amount of data we are dealing with is very small so no external database is implemented.  
@@ -179,47 +179,47 @@ After you have successfully logged in , Go to the users table and add New user a
 
 ```Menu```
 <div style="align:center">
- <img src="./screenshots/menu.png" alt="menu-image" width="80%"></img>
+ <img src="./screenshots/menu.png" alt="menu-image" width="100%"></img>
 </div>
 
 ```Invites Lectures```
 <div style="align:center">
- <img src="./screenshots/lectures.png" alt="lectures-image" width="80%"></img>
+ <img src="./screenshots/lectures.png" alt="lectures-image" width="100%"></img>
  </div>
 
  ```Contact```
 <div style="align:center">
- <img src="./screenshots/contact.png" alt="contact-image" width="80%"></img>
+ <img src="./screenshots/contact.png" alt="contact-image" width="100%"></img>
  </div>
 
  ```PPTs```
 <div style="align:center">
- <img src="./screenshots/ppts.png" alt="ppts-image" width="80%"></img>
+ <img src="./screenshots/ppts.png" alt="ppts-image" width="100%"></img>
  </div>
 
  ```Publicaitons```
 <div style="align:center">
- <img src="./screenshots/publications.png" alt="publicaitons-image" width="80%"></img>
+ <img src="./screenshots/publications.png" alt="publicaitons-image" width="100%"></img>
  </div>
 
  ```Book Details Page for buying or downloading```
 <div style="align:center">
- <img src="./screenshots/bookbuy.png" alt="bookbuy-image" width="80%"></img>
+ <img src="./screenshots/bookbuy.png" alt="bookbuy-image" width="100%"></img>
  </div>
 
  ```Research Scholars```
 <div style="align:center">
- <img src="./screenshots/scholar.png" alt="scholar-image" width="80%"></img>
+ <img src="./screenshots/scholar.png" alt="scholar-image" width="100%"></img>
  </div>
 
  ```Books```
 <div style="align:center">
- <img src="./screenshots/books.png" alt="books-image" width="80%"></img>
+ <img src="./screenshots/books.png" alt="books-image" width="100%"></img>
  </div>
 
  ```Footer```
 <div style="align:center">
- <img src="./screenshots/footer.png" alt="footer-image" width="80%"></img>
+ <img src="./screenshots/footer.png" alt="footer-image" width="100%"></img>
 </div>
 
 
