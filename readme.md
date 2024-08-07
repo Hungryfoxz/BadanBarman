@@ -251,17 +251,15 @@ After you have successfully logged in , Go to the users table and add New user a
 _________________________________________________________________________________________
 ## Comments
 >
- I had a great experience in building the website from designing to actually implementing the code.
- The idea was to first build the website with REACTjs or Svelte Kit but both of them required the setting 
- up of a database [either monogDB or MySQL], but django provided an inbuild database i.e. sqlite3 which made it so much easier to go for Django...<br/>
+ Building this website was a rewarding journey from concept to code. Initially, ReactJS or SvelteKit were considered, but both necessitated setting up a database like MongoDB or MySQL. Django's built-in SQLite3 database significantly simplified the development process, making it the preferred choice...<br/>
 
- The design started with the Homepage hero section, and other parts were designed as the project progressed. It is my first Python project where I have incorporated npm for installing JS library...<br/>
+ The design started with the Homepage hero section, and other parts were designed as the project progressed. It is my first Python project where I have incorporated npm for installing JS libraries...<br/>
 
- Each section of the Homepage took one day each to complete with the hero section taking the most,more than 5 days. The other pages after completing the homepage were finished very fast one day per page. The whole project was completed in 1 month time...<br/>
+ The homepage hero section was the most time-consuming, requiring over five days to perfect. Other homepage sections were completed within a day each, while subsequent pages were finished rapidly, averaging one day per page. The entire project was successfully concluded within a month....<br/>
 
- There were moments where the code had no mistakes but it refused to run. At moments I gave up and thought to give up. But something inside me made me continue, and I didn't let myself break. At last I can say that hard work has really paid off as it has turned out better than I imagined.
+ There were countless instances where my code seemed flawless, yet refused to execute. Frustration mounted, and there were moments when giving up felt like the only option. However, an inner drive propelled me forward, refusing to yield to defeat. Ultimately, perseverance triumphed, and the final product exceeded my expectations, proving that hard work truly pays off.
 
-```Fun Fact``` During the creation of this website I had to continuously refer to the original website www.badanbarman.in for various purpose. Now the thing is that the original website contained a counter that counted how many times the website has been viewed by someone. I visited the website so many times during 1 month that the counter increased by more than 8000+ times...<br/>
+ ```Fun Fact``` While building my website, I became well-acquainted with www.badanbarman.in. Perhaps a little too well-acquainted, as my frequent visits seem to have inflated the visitor counter by over 8,000! Let's just say I have single-handedly boosted the traffic stats....<br/>
 
 
 ## Acknowledgments
