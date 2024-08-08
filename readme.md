@@ -259,7 +259,7 @@ ________________________________________________________________________________
 
  There were countless instances where my code seemed flawless, yet refused to execute. Frustration mounted, and there were moments when giving up felt like the only option. However, an inner drive propelled me forward, refusing to yield to defeat. Ultimately, perseverance triumphed, and the final product exceeded my expectations, proving that hard work truly pays off.
 
- ```Fun Fact``` While building my website, I became well-acquainted with www.badanbarman.in. Perhaps a little too well-acquainted, as my frequent visits seem to have inflated the visitor counter by over 8,000! Let's just say I have single-handedly boosted the traffic stats....<br/>
+ ```Fun Fact``` While building my website, I became well-acquainted with www.badanbarman.in. Perhaps a little too well-acquainted, as my frequent visits seem to have inflated the visitor counter by over 5,000! Let's just say I have single-handedly boosted the traffic stats....<br/>
 
 
 ## Acknowledgments
